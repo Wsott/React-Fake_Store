@@ -1,5 +1,10 @@
+import Navbar from "../components/shared/Navbar";
+
 export default function Categories () {
     return (
-        <h1>CATEGORIES</h1>
+        <>
+            <Navbar/>
+            <h1>CATEGORIES</h1>
+        </>
     );
 }

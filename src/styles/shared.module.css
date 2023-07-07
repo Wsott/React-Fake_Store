@@ -1,0 +1,43 @@
+.navbar {
+    height: 60px;
+    max-width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+}
+
+.content, .mainLinks {
+    display: grid;
+}
+
+.content {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mainLinks {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5rem;
+}
+
+
+.logo, .links, .loginLink {
+    color: #000;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.links {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.loginLink {
+    float: right;
+}
