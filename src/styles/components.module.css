@@ -42,6 +42,25 @@
     float: right;
 }
 
+/* Status */
+.statusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    height: 50vh;
+}
+
+.loader {
+    width: 7.5%;
+}
+
+.loaderMessage {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
 /* Cards */
 .cardContainer {
     width: 265px;

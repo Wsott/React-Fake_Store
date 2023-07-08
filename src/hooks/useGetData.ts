@@ -7,6 +7,6 @@ export default async function useGetData (API_URL: string) {
     if (json.error) {
         throw new Error(json.error);
     }
-
+    
     return json;
 }

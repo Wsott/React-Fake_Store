@@ -4,6 +4,7 @@ import useGetData from "../hooks/useGetData";
 import style from "../styles/pages.module.css";
 import Card from "../components/unique/Card";
 import { Link } from "react-router-dom";
+import Loading from "../components/shared/Loading";
 
 const queryKeyCategories = "categories";
 const URL = "https://api.escuelajs.co/api/v1/categories";
@@ -19,7 +20,7 @@ export default function Categories () {
         <>
             <Navbar/>
             <div className={style.mainContent}>
-                {status == "loading" && <h1>Cargando...</h1>}
+                {status == "loading" && <Loading/>}
                 {status == "error" && <h1>Error!</h1>}
                 {status == "success" &&
                     data.map((actual: any, index: number) => {
