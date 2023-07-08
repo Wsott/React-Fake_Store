@@ -1,7 +1,7 @@
 .navbar {
     height: 60px;
     max-width: 100%;
-    background-color: #FFFFFF;
+    background-color: var(--color-terciario);
     display: flex;
     align-items: center;
     padding: 0px 50px;
@@ -22,7 +22,7 @@
 
 
 .logo, .links, .loginLink {
-    color: #000;
+    color: #FFFFFF;
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.6px;
@@ -47,7 +47,7 @@
     width: 265px;
     height: 331px;
 
-    background-color: rgb(219, 219, 219);
+    background-color: var(--color-primario);
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -67,4 +67,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--color-terciario);
 }

@@ -2,10 +2,10 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
 
-  /* --color-fondo: #2B3467;
-  --color-primario: #BAD7E9;
-  --color-secundario: #FCFFE7;
-  --color-terciario: #EB455F; */
+  --color-fondo: #F5F5F5;
+  --color-primario: #F05454;
+  --color-secundario: #30475E;
+  --color-terciario: #121212; 
 }
 
 a {
@@ -13,6 +13,7 @@ a {
 }
 
 body {
+  background-color: var(--color-fondo);
   margin: 0px;
 }
 /* :root {
