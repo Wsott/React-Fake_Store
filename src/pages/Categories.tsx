@@ -3,6 +3,7 @@ import Navbar from "../components/shared/Navbar";
 import useGetData from "../hooks/useGetData";
 import style from "../styles/pages.module.css";
 import Card from "../components/unique/Card";
+import { Link } from "react-router-dom";
 
 const queryKeyCategories = "categories";
 const URL = "https://api.escuelajs.co/api/v1/categories";
@@ -21,16 +22,18 @@ export default function Categories () {
                 {status == "loading" && <h1>Cargando...</h1>}
                 {status == "error" && <h1>Error!</h1>}
                 {status == "success" &&
-                    data.map((actual: any) => {
+                    data.map((actual: any, index: number) => {
                         return (
-                            <div className={style.gridCell}>
-                                <Card 
-                                    id={actual.id} 
-                                    name={actual.name} 
-                                    image={actual.image} 
-                                    creationDate={null} 
-                                    updateDate={null}/>
-                            </div>
+                            <Link key={index} to="/products" state={{filter: actual.name}}>
+                                <div className={style.gridCell}>
+                                    <Card 
+                                        id={actual.id} 
+                                        name={actual.name} 
+                                        image={actual.image} 
+                                        creationDate={null} 
+                                        updateDate={null}/>
+                                </div>
+                            </Link>
                         )
                     })
                     

@@ -12,7 +12,9 @@ export default function Navbar () {
                     <Link to="/categories">
                         <span className={style.links}>Categories</span>
                     </Link>
-                    <span className={style.links}>Products</span>
+                    <Link to="/products">
+                        <span className={style.links}>Products</span>
+                    </Link>
                     <span className={style.links}>About</span>
                 </div>
                 <div>

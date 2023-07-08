@@ -5,3 +5,7 @@ export interface CardData {
     creationDate: string | null;
     updateDate: string | null;
 }
+
+export interface ProductsData {
+    filter: string | null;
+}

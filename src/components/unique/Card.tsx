@@ -1,4 +1,4 @@
-import {CardData as Data} from "../../interfaces/DataType";
+import {CardData as Data} from "../../functions/DataType";
 import style from "../../styles/components.module.css";
 
 export default function Card (inputData: Data) {
