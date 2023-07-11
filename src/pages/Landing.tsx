@@ -3,7 +3,7 @@ import Navbar from "../components/shared/Navbar";
 export default function Landing () {
     return (
         <>
-        <Navbar/>
+        {/* <Navbar/> */}
         <h1>LANDING</h1>
         </>
     );

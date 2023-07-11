@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-
-export default async function useGetData (API_URL: string) {
+export default async function useFetch (API_URL: string) {
     const response = await fetch(API_URL);
     const json = await response.json();
 

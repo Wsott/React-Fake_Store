@@ -6,7 +6,7 @@ export default function Products () {
     const { state } = useLocation();
     return (
         <>
-            <Navbar/>
+            {/* <Navbar/> */}
             <h1>Productos filtrado por: {(state)? state.filter : "no filter"}</h1>
         </>
     );

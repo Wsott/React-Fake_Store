@@ -7,6 +7,7 @@ import Categories from './pages/Categories'
 import Products from './pages/Products'
 import CartDetail from './pages/CartDetail'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import Navbar from './components/shared/Navbar'
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Landing/>}/>
           <Route path="/login" element={<Login/>}/>
