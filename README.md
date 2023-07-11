@@ -7,7 +7,7 @@ Author: Gomez Olivera, Emiliano
 
 Start date: 2023/07/04 05:44
 
-1st Milestone: 2023/0X/XX XX:XX
+1st Milestone: 2023/07/11 10:03
 
 2nd Milestone: 2023/0X/XX XX:XX
 
