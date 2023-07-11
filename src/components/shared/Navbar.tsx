@@ -21,9 +21,6 @@ export default function Navbar () {
                     <Link className={style.loginLink} to="/login">
                         Login
                     </Link>
-                    {/* <Link to="/login">
-                        <span className={style.loginLink}>Login</span>
-                    </Link> */}
                 </div>
             </div>
         </div>

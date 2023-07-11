@@ -1,5 +1,4 @@
 import { useQuery } from "react-query";
-import Navbar from "../components/shared/Navbar";
 import useFetch from "../hooks/useFetch/useFetch";
 import style from "../styles/pages.module.css";
 import Card from "../components/unique/Card";
@@ -7,9 +6,6 @@ import { Link } from "react-router-dom";
 import Loading from "../components/shared/Loading";
 import Error from "../components/shared/Error";
 import { URL, QUERY_KEY_CATEGORIES} from "../functions/GlobalConstants";
-
-// const queryKeyCategories = "categories";
-// const URL = "https://api.escuelajs.co/api/v1/categories";
 
 function FetchWrapper () {
     return useFetch(URL);
@@ -20,7 +16,6 @@ export default function Categories () {
     
     return (
         <>
-            {/* <Navbar/> */}
             <div className={style.mainContent}>
                 {status == "loading" && <Loading/>}
                 {status == "error" && <Error/>}
@@ -41,12 +36,7 @@ export default function Categories () {
                     })
                     
                 }
-            </div>
-            {/* <h1>CATEGORIES</h1> */}
-
-
-
-            
+            </div> 
         </>
     );
 }
