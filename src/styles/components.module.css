@@ -1,0 +1,90 @@
+.navbar {
+    height: 60px;
+    max-width: 100%;
+    background-color: var(--color-terciario);
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+}
+
+.content, .mainLinks {
+    display: grid;
+}
+
+.content {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mainLinks {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5rem;
+}
+
+
+.logo, .links, .loginLink {
+    color: #FFFFFF;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.6px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.links {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.loginLink {
+    float: right;
+}
+
+/* Status */
+.statusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    height: 50vh;
+}
+
+.loader {
+    width: 7.5%;
+}
+
+.loaderMessage {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+/* Cards */
+.cardContainer {
+    width: 265px;
+    height: 331px;
+
+    background-color: var(--color-primario);
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+    
+.cardContainer:hover {
+    transform: translateY(-10px) translateX(-10px);
+    box-shadow: 15px 15px 14px rgba(0, 0, 0, 0.2);
+    /* text-shadow: 0 0 8px rgb(255, 0, 0, 0.25); */
+    /* color: #EB455F; */
+}
+
+.cardImage {
+    width: 100%;
+}
+
+.cardDescription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-terciario);
+}
