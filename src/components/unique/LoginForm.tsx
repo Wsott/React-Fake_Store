@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "../../styles/components.module.css";
 import { Separator } from "../shared/Separator";
 import { LoginData, LoginToken } from "../../functions/DataType";
 import { useMutation } from "react-query";
 import axios from "axios";
+import AuthContext from "../../context/UserProvider";
+import { useContext } from "react";
 
 export default function LoginForm () {
+    const navigate = useNavigate();
+    // const { user, setUser } = useContext(AuthContext);
+    
     const loginMutation = useMutation(
         (data: LoginData) => {
             return axios.post("https://api.escuelajs.co/api/v1/auth/login", data);
@@ -19,22 +24,29 @@ export default function LoginForm () {
                     access_token,
                     refresh_token
                 };
-
+                
                 localStorage.setItem("session", JSON.stringify(sessionData));
-
+                navigate("/");
                 //console.log(localStorage.getItem("session"));
             }
         }
     )
 
-    function handleForm(event: React.FormEvent<HTMLFormElement>) {
+    async function handleForm(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
         const email: string = formData.get("email") as string;
         const password: string = formData.get("pass") as string;
         const loginData: LoginData = {email, password};
 
-        loginMutation.mutate(loginData);
+        await loginMutation.mutate(loginData);
+        
+
+        // setTimeout(() => {return}, 1000);
+
+        // if (loginMutation.isSuccess) {
+            
+        // }
 
         // const response = loginMutation.data.data as LoginToken;
 

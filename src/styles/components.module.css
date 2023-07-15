@@ -28,7 +28,7 @@ a {
 }
 
 
-.logo, .links, .loginLink {
+.logo, .links, .loginLink, .welcomeMessage {
     color: #FFFFFF;
     font-style: normal;
     line-height: normal;
@@ -185,4 +185,14 @@ a {
 .separatorLines {
     width: 100%;
     margin: 0;
+}
+
+/* */
+.horizontalContainer {
+    display: flex;
+    float: right;
+}
+
+.welcomeMessage {
+    margin: 0 1rem;
 }

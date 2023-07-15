@@ -23,6 +23,10 @@ export interface SignupData {
     avatar: string;
 }
 
+export interface LoggedUser {
+    name: string | null;
+}
+
 export interface LoginToken {
     access_token: string;
     refresh_token: string;
