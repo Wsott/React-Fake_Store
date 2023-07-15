@@ -1,5 +1,7 @@
+import RegisterForm from "../components/unique/RegisterForm";
+
 export default function Register () {
     return (
-        <h1>REGISTER</h1>
+        <RegisterForm/>
     );
 }

@@ -6,8 +6,34 @@ export interface CardData {
     updateDate: string | null;
 }
 
+export interface UserData {
+    user: LoginToken | null;
+    setUser: (user: LoginToken | null) => void;
+}
 
+export interface LoginData {
+    email: string;
+    password: string;
+}
+
+export interface SignupData {
+    name: string;
+    email: string;
+    password: string;
+    avatar: string;
+}
+
+export interface LoginToken {
+    access_token: string;
+    refresh_token: string;
+}
 
 export interface ProductsData {
     filter: string | null;
+}
+
+export interface AuthContextData {
+    user: string | null;
+    login: (user: string, callback: VoidFunction) => void;
+    logout: (callback: VoidFunction) => void;
 }
