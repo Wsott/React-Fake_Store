@@ -1,5 +1,7 @@
+import LoginForm from "../components/unique/LoginForm";
+
 export default function Login () {
     return (
-        <h1>LOGIN</h1>
+        <LoginForm/>
     );
 }

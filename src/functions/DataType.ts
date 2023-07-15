@@ -6,6 +6,8 @@ export interface CardData {
     updateDate: string | null;
 }
 
+
+
 export interface ProductsData {
     filter: string | null;
 }
