@@ -5,7 +5,7 @@ import { LoginToken } from "../functions/DataType";
 import axios from "axios";
 
 export default function Landing () {
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
     
     const nameMutation = useMutation(
         (data: LoginToken) => {

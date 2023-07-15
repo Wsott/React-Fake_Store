@@ -1,5 +1,5 @@
 import style from "../../styles/components.module.css";
-import { LoggedUser, LoginToken } from "../../functions/DataType";
+import { LoggedUser } from "../../functions/DataType";
 import { useContext } from "react";
 import UserContext from "../../context/UserProvider";
 

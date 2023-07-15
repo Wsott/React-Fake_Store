@@ -1,17 +1,11 @@
 import { Link } from "react-router-dom";
 import style from "../../styles/components.module.css";
 import CurrentUser from "./CurrentUser";
-import { useContext, useEffect, useState } from "react";
-import AuthContext from "../../context/UserProvider";
+import { useContext } from "react";
 import UserContext from "../../context/UserProvider";
 
 export default function Navbar () {
     const { user } = useContext(UserContext);
-
-    // useEffect(() => {
-    //     setLoggedIn(localStorage.getItem('name') != null);
-    // }, [window.addEventListener('storage', () => localStorage.getItem("name") != null)])
-
 
     return (
         <div className={style.navbar}>

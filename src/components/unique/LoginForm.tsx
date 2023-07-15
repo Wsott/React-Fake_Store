@@ -4,8 +4,6 @@ import { Separator } from "../shared/Separator";
 import { LoginData, LoginToken } from "../../functions/DataType";
 import { useMutation } from "react-query";
 import axios from "axios";
-import AuthContext from "../../context/UserProvider";
-import { useContext } from "react";
 
 export default function LoginForm () {
     const navigate = useNavigate();
