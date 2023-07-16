@@ -17,7 +17,7 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
     const [ filter, setFilter ] = useState("");
     const [ titleFilter, setTitleFilter ] = useState("");
-    const [ priceFilter, setPriceFilter ] = useState("99999999");
+    const [ priceFilter, setPriceFilter ] = useState("");
     const preSelectedCategory = (preSelected)? preSelected.name : null;
     const [ psf, setPSF] = useState((preSelected)? preSelected.filter : null);
 
