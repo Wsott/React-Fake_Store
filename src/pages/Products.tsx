@@ -42,9 +42,12 @@ export default function Products () {
             }
         }
     )
-
+    
     useEffect (() => {
-        productsMutation.mutate({modifiers: ""});
+        // alert(!state);
+        if (!state) {
+            productsMutation.mutate({modifiers: ""});
+        }
     }, []);
 
     function updateFilter (newFilter: string) {

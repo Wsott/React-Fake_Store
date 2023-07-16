@@ -29,10 +29,10 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
     }
 
     useEffect (() => {
-        if (!psf) {
-            updateFilter(filter);
-        }
-        else {
+        
+        updateFilter(filter);
+        
+        if (psf) {
             updateFilter(psf);
             setPSF(null);
         }
