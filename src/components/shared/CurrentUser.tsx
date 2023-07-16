@@ -2,15 +2,18 @@ import style from "../../styles/components.module.css";
 import { LoggedUser } from "../../functions/DataType";
 import { useContext } from "react";
 import UserContext from "../../context/UserProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function CurrentUser ( {name}: LoggedUser) {
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
+    const navigate = useNavigate();
 
     function handleLogOut () {
         localStorage.removeItem("name");
         localStorage.removeItem("session");
         setUser("");
-        console.log(user)
+        navigate("/");
+        // console.log(user)
     }
 
     return (
