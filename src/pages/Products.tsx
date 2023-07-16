@@ -6,7 +6,7 @@ import pageStyle from "../styles/pages.module.css";
 import CategoriesFilter from "../components/unique/CategoriesFilter";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import style from "../styles/components.module.css";
 
 
 interface ProductsSearchData {
@@ -59,7 +59,9 @@ export default function Products () {
 
     return (
         <>
-            <h1>Productos filtrado por: {(state)? state.filter : "no filter"}</h1>
+            <div className={style.centeredTitle}>
+                <h1>Listado de productos</h1>
+            </div>
             <div className={pageStyle.sectionedPage}>
                 <div className={pageStyle.sideBar}>
                     <CategoriesFilter updateFilter={updateFilter} preSelected={state}/>                    
@@ -71,7 +73,7 @@ export default function Products () {
                                 return <Card 
                                     key={index}
                                     id={actual.id} 
-                                    name={actual.title} 
+                                    name={actual.title + " - $" + actual.price} 
                                     image={actual.images[0]} 
                                     creationDate={null} 
                                     updateDate={null}/>

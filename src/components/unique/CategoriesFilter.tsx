@@ -15,28 +15,38 @@ interface FilterComponent {
 
 export default function CategoriesFilter ( {updateFilter, preSelected}: FilterComponent ) {
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
-    const [ filter, setFilter ] = useState("?");
+    const [ filter, setFilter ] = useState("");
+    const [ titleFilter, setTitleFilter ] = useState("");
+    const [ priceFilter, setPriceFilter ] = useState("99999999");
     const preSelectedCategory = (preSelected)? preSelected.name : null;
     const [ psf, setPSF] = useState((preSelected)? preSelected.filter : null);
 
     function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
         if (event.target.checked) {
-            setFilter ("?" + event.target.value); //(filter + event.target.value + "&");
+            setFilter (event.target.value + "&"); //(filter + event.target.value + "&");
         }
         // else {
         //     setFilter (filter.replace(event.target.value + "&", ""));
         // }
     }
 
+    function handleTitleFilter (event: React.ChangeEvent<HTMLInputElement>) {
+        setTitleFilter ("title=" + event.target.value + "&");
+    }
+
+    function handlePriceFilter (event: React.ChangeEvent<HTMLInputElement>) {
+        setPriceFilter ("price_min=1&price_max=" + event.target.value + "&");
+    }
+
     useEffect (() => {
-        
-        updateFilter(filter);
+        console.log("?" + filter);
+        updateFilter("?" + titleFilter + priceFilter + filter);
         
         if (psf) {
             updateFilter(psf);
             setPSF(null);
         }
-    }, [filter] )
+    }, [filter, titleFilter, priceFilter] )
     
     return (
         <div>
@@ -56,6 +66,10 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
                     })
                     
                 }
+                <label htmlFor="nameFilter">Filter by name</label>
+                <input onChange={handleTitleFilter} type="text" name="nameFilter" id="nameFilter" />
+                <label htmlFor="priceFilter">Filter by price</label>
+                <input onChange={handlePriceFilter} type="number" name="priceFilter" id="priceFilter" min={1} defaultValue={1000} step={10}  />
             </div>
         </div>
     );
