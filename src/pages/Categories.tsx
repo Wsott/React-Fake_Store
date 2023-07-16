@@ -22,7 +22,7 @@ export default function Categories () {
                 {status == "success" &&
                     data.map((actual: any, index: number) => {
                         return (
-                            <Link key={index} to="/products" state={{filter: actual.name}}>
+                            <Link key={index} to="/products" state={{name: actual.name, filter: "?categoryId=" + actual.id}}>
                                 <div className={style.gridCell}>
                                     <Card 
                                         id={actual.id} 

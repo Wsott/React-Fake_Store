@@ -10,11 +10,14 @@ function FetchWrapper () {
 
 interface FilterComponent {
     updateFilter: (input: string) => void;
+    preSelected: any | null;
 }
 
-export default function CategoriesFilter ( {updateFilter}: FilterComponent ) {
+export default function CategoriesFilter ( {updateFilter, preSelected}: FilterComponent ) {
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
     const [ filter, setFilter ] = useState("?");
+    const preSelectedCategory = (preSelected)? preSelected.name : null;
+    const [ psf, setPSF] = useState((preSelected)? preSelected.filter : null);
 
     function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
         if (event.target.checked) {
@@ -26,7 +29,13 @@ export default function CategoriesFilter ( {updateFilter}: FilterComponent ) {
     }
 
     useEffect (() => {
-        updateFilter(filter);
+        if (!psf) {
+            updateFilter(filter);
+        }
+        else {
+            updateFilter(psf);
+            setPSF(null);
+        }
     }, [filter] )
     
     return (
@@ -37,7 +46,9 @@ export default function CategoriesFilter ( {updateFilter}: FilterComponent ) {
                     data.map((actual: any, index: number) => {
                         return (
                             <div key={index}>
-                                <input onChange={handleChange} type="radio" value={"categoryId=" + actual.id} name="categoryOption" id="categoryOption" />
+                                <input 
+                                defaultChecked={actual.name === preSelectedCategory}
+                                onChange={handleChange} type="radio" value={"categoryId=" + actual.id} name="categoryOption" id="categoryOption" />
                                 <label htmlFor="categoryOption">{actual.name}</label>
                             </div>
                             // <p>{actual.name}</p>

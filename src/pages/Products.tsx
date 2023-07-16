@@ -59,7 +59,7 @@ export default function Products () {
             <h1>Productos filtrado por: {(state)? state.filter : "no filter"}</h1>
             <div className={pageStyle.sectionedPage}>
                 <div className={pageStyle.sideBar}>
-                    <CategoriesFilter updateFilter={updateFilter}/>                    
+                    <CategoriesFilter updateFilter={updateFilter} preSelected={state}/>                    
                 </div>
                 <div className={pageStyle.mainContentOnSectioned}>
                     {
