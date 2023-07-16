@@ -18,7 +18,7 @@ export default function CurrentUser ( {name}: LoggedUser) {
     return (
         <div className={style.horizontalContainer}>
             <p className={style.welcomeMessage}>Welcome, {name}!</p>
-            <button onClick={handleLogOut}>Log out</button>
+            <button className={style.logoutButton} onClick={handleLogOut}>Log out</button>
         </div>
     )
 }

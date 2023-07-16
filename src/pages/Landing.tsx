@@ -40,7 +40,7 @@ export default function Landing () {
         <LandingMessage 
             image={"/harold-customer.png"} 
             title={"Our customer's opinion"} 
-            text={"<< As an avid customer of this shop let me clarify that I'm not getting paid a single dime for this shameless endorsement. I simply can't resist the allure of their quirky collection, from rubber chickens to dancing disco socks. It's like stepping into a parallel universe where every purchase becomes an adventure, and my bank account weeps with joy. So, dear friends, if you ever find yourself craving an absurdly delightful shopping experience, head over to this shop - you won't regret it (but your wallet might). >>"} 
+            text={`"As an avid customer of this shop let me clarify that I'm not getting paid a single dime for this shameless endorsement. I simply can't resist the allure of their quirky collection, from rubber chickens to dancing disco socks. It's like stepping into a parallel universe where every purchase becomes an adventure, and my bank account weeps with joy. So, dear friends, if you ever find yourself craving an absurdly delightful shopping experience, head over to this shop - you won't regret it (but your wallet might)." - A real customer.`} 
             imageOnLeft={true} />
 
         <LandingMessage 

@@ -55,7 +55,7 @@ export default function RegisterForm () {
                     <label htmlFor="terms">I agree to the <b>terms</b> and <b>privacy policy</b>.</label>
                 </div>
                 
-                <button>Create my account!</button>
+                <button className={style.loginButton}>Create my account!</button>
             </form>
         </div>
     )

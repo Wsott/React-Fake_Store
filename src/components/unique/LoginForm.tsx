@@ -46,14 +46,13 @@ export default function LoginForm () {
                 <p className={style.loginSubtitle}>Login with email</p>
                 <input className={style.loginInput} type="email" name="email" id="email" placeholder="Email" />
                 <input className={style.loginInput} type="password" name="pass" id="pass" placeholder="Password" />
-                <button>Login</button>
+                <button className={style.loginButton}>Login</button>
                 <Separator/>
                 <p className={style.forgotPass}>Forgot Password?</p>
+                <Link to="/signup" className={style.create}>
+                    Or create an <span className={style.boldCreate}>account</span>
+                </Link>
             </form>
-            
-            <Link to="/signup" className={style.create}>
-                Or create an <span className={style.boldCreate}>account</span>
-            </Link>
         </div>
     );
 }

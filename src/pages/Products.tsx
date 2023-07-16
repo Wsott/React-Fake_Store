@@ -7,6 +7,7 @@ import CategoriesFilter from "../components/unique/CategoriesFilter";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import style from "../styles/components.module.css";
+import Loading from "../components/shared/Loading";
 
 
 interface ProductsSearchData {
@@ -61,7 +62,7 @@ export default function Products () {
                 </div>
                 <div className={pageStyle.mainContentOnSectioned}>
                     {
-                        (data) &&
+                        (data)?
                             data.map((actual: any, index: number) => {
                                 return <Card 
                                     key={index}
@@ -71,6 +72,8 @@ export default function Products () {
                                     creationDate={null} 
                                     updateDate={null}/>
                             })
+                        :
+                            <Loading/>
                     }
                 </div>
             </div>
