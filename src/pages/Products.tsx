@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
 import { useLocation } from "react-router-dom";
 import { URL_PRODUCTS } from "../functions/GlobalConstants";
 import Card from "../components/unique/Card";
@@ -32,7 +32,7 @@ export default function Products () {
         },
         {
             onSuccess: (data) => {
-                const name = data.data.name as string;
+                // const name = data.data.name as string;
                 //console.log(data.data);
                 setData(data.data);
                 //localStorage.setItem("name", data.data.name);
