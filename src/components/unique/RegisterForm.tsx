@@ -3,12 +3,13 @@ import { SignupData } from "../../functions/DataType";
 import style from "../../styles/components.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { URL_AUTH } from "../../functions/GlobalConstants";
 
 export default function RegisterForm () {
     const history = useNavigate();
     const signupMutation = useMutation(
         (data: SignupData) => {
-            return axios.post("https://api.escuelajs.co/api/v1/users/", data)
+            return axios.post(URL_AUTH, data)
         },
         {
             onSuccess: () => {

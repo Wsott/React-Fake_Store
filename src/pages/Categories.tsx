@@ -5,10 +5,10 @@ import Card from "../components/unique/Card";
 import { Link } from "react-router-dom";
 import Loading from "../components/shared/Loading";
 import Error from "../components/shared/Error";
-import { URL, QUERY_KEY_CATEGORIES} from "../functions/GlobalConstants";
+import { URL_CATEGORIES, QUERY_KEY_CATEGORIES} from "../functions/GlobalConstants";
 
 function FetchWrapper () {
-    return useFetch(URL);
+    return useFetch(URL_CATEGORIES);
 }
 
 export default function Categories () {

@@ -4,6 +4,7 @@ import { Separator } from "../shared/Separator";
 import { LoginData, LoginToken } from "../../functions/DataType";
 import { useMutation } from "react-query";
 import axios from "axios";
+import { URL_LOGIN } from "../../functions/GlobalConstants";
 
 export default function LoginForm () {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function LoginForm () {
     
     const loginMutation = useMutation(
         (data: LoginData) => {
-            return axios.post("https://api.escuelajs.co/api/v1/auth/login", data);
+            return axios.post(URL_LOGIN, data);
         },
         {
             onSuccess: (data) => {

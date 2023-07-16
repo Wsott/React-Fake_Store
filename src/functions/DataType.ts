@@ -41,3 +41,8 @@ export interface AuthContextData {
     login: (user: string, callback: VoidFunction) => void;
     logout: (callback: VoidFunction) => void;
 }
+
+export interface UserContextType {
+  user: string;
+  setUser: React.Dispatch<React.SetStateAction<string>>;
+}
