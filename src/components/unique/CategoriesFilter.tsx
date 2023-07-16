@@ -9,9 +9,26 @@ function FetchWrapper () {
     return useFetch(URL_CATEGORIES);
 }
 
-export default function CategoriesFilter () {
-    const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
+interface FilterComponent {
+    updateFilter: (input: string) => void;
+}
 
+export default function CategoriesFilter ( {updateFilter}: FilterComponent ) {
+    const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
+    const [ filter, setFilter ] = useState("?");
+
+    function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
+        if (event.target.checked) {
+            setFilter (filter + event.target.name + "&");
+        }
+        else {
+            setFilter (filter.replace(event.target.name + "&", ""));
+        }
+    }
+
+    useEffect (() => {
+        updateFilter(filter);
+    }, [filter] )
     
     return (
         <div>
@@ -20,8 +37,8 @@ export default function CategoriesFilter () {
                 {status == "success" &&
                     data.map((actual: any, index: number) => {
                         return (
-                            <div>
-                                <input type="checkbox" name="categoryOption" id="categoryOption" />
+                            <div key={index}>
+                                <input onChange={handleChange} type="checkbox" name={"categoryId=" + actual.id} id="categoryOption" />
                                 <label htmlFor="categoryOption">{actual.name}</label>
                             </div>
                             // <p>{actual.name}</p>
