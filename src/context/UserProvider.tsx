@@ -1,13 +1,6 @@
 import { createContext, useState } from "react";
 import { UserContextType } from "../functions/DataType";
 
-// const UserContext = createContext<string>("");
-
-// interface UserContextType {
-//   user: string;
-//   setUser: React.Dispatch<React.SetStateAction<string>>;
-// }
-
 const UserContext = createContext<UserContextType>({
   user: "",
   setUser: () => {return},

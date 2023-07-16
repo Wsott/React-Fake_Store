@@ -13,7 +13,6 @@ export default function CurrentUser ( {name}: LoggedUser) {
         localStorage.removeItem("session");
         setUser("");
         navigate("/");
-        // console.log(user)
     }
 
     return (

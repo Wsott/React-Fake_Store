@@ -8,7 +8,6 @@ import { URL_LOGIN } from "../../functions/GlobalConstants";
 
 export default function LoginForm () {
     const navigate = useNavigate();
-    // const { user, setUser } = useContext(AuthContext);
     
     const loginMutation = useMutation(
         (data: LoginData) => {
@@ -26,7 +25,6 @@ export default function LoginForm () {
                 
                 localStorage.setItem("session", JSON.stringify(sessionData));
                 navigate("/");
-                //console.log(localStorage.getItem("session"));
             }
         }
     )
@@ -39,17 +37,6 @@ export default function LoginForm () {
         const loginData: LoginData = {email, password};
 
         await loginMutation.mutate(loginData);
-        
-
-        // setTimeout(() => {return}, 1000);
-
-        // if (loginMutation.isSuccess) {
-            
-        // }
-
-        // const response = loginMutation.data.data as LoginToken;
-
-        // console.log(x.access_token);
     }
 
     return (
@@ -63,11 +50,9 @@ export default function LoginForm () {
                 <Separator/>
                 <p className={style.forgotPass}>Forgot Password?</p>
             </form>
-            {/* <p>{loginMutation.isSuccess && loginMutation.data.data}</p> */}
             
             <Link to="/signup" className={style.create}>
                 Or create an <span className={style.boldCreate}>account</span>
-            {/* <p className={style.create}>Or create an <span className={style.boldCreate}>account</span></p> */}
             </Link>
         </div>
     );

@@ -32,19 +32,12 @@ export default function Products () {
         },
         {
             onSuccess: (data) => {
-                // const name = data.data.name as string;
-                //console.log(data.data);
                 setData(data.data);
-                //localStorage.setItem("name", data.data.name);
-                //setUser(name)
-                //console.log(name);
-                // navigate("/");
             }
         }
     )
     
     useEffect (() => {
-        // alert(!state);
         if (!state) {
             productsMutation.mutate({modifiers: ""});
         }
@@ -79,20 +72,6 @@ export default function Products () {
                                     updateDate={null}/>
                             })
                     }
-                    {/* {
-                        status == "success" &&
-                            data.map((actual: any, index: number) => {
-                                return (
-                                    <Card 
-                                        key={index}
-                                        id={actual.id} 
-                                        name={actual.title} 
-                                        image={actual.images[0]} 
-                                        creationDate={null} 
-                                        updateDate={null}/>
-                                )
-                            })
-                    } */}
                 </div>
             </div>
         </>

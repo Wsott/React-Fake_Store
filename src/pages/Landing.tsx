@@ -18,10 +18,7 @@ export default function Landing () {
         {
             onSuccess: (data) => {
                 const name = data.data.name as string;
-                //localStorage.setItem("name", data.data.name);
                 setUser(name)
-                console.log(name);
-                // navigate("/");
             }
         }
     )

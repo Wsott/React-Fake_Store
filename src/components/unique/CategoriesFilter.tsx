@@ -23,11 +23,8 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
 
     function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
         if (event.target.checked) {
-            setFilter (event.target.value + "&"); //(filter + event.target.value + "&");
+            setFilter (event.target.value + "&");
         }
-        // else {
-        //     setFilter (filter.replace(event.target.value + "&", ""));
-        // }
     }
 
     function handleTitleFilter (event: React.ChangeEvent<HTMLInputElement>) {
@@ -61,7 +58,6 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
                                 onChange={handleChange} type="radio" value={"categoryId=" + actual.id} name="categoryOption" id="categoryOption" />
                                 <label htmlFor="categoryOption">{actual.name}</label>
                             </div>
-                            // <p>{actual.name}</p>
                         )
                     })
                     
