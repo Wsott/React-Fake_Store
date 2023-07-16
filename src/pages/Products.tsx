@@ -1,17 +1,13 @@
 import { useMutation, useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
-import { QUERY_KEY_PRODUCTS, URL_PRODUCTS } from "../functions/GlobalConstants";
-import useFetch from "../hooks/useFetch/useFetch";
+import { URL_PRODUCTS } from "../functions/GlobalConstants";
 import Card from "../components/unique/Card";
-import style from "../styles/components.module.css";
 import pageStyle from "../styles/pages.module.css";
 import CategoriesFilter from "../components/unique/CategoriesFilter";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function FetchWrapper () {
-    return useFetch(URL_PRODUCTS);
-}
+
 
 interface ProductsSearchData {
     modifiers: string;

@@ -1,6 +1,5 @@
-import { useMutation, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { QUERY_KEY_CATEGORIES, URL_CATEGORIES } from "../../functions/GlobalConstants";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch/useFetch";
 import style from "../../styles/components.module.css";
