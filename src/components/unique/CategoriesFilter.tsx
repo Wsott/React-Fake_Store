@@ -18,11 +18,11 @@ export default function CategoriesFilter ( {updateFilter}: FilterComponent ) {
 
     function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
         if (event.target.checked) {
-            setFilter (filter + event.target.name + "&");
+            setFilter ("?" + event.target.value); //(filter + event.target.value + "&");
         }
-        else {
-            setFilter (filter.replace(event.target.name + "&", ""));
-        }
+        // else {
+        //     setFilter (filter.replace(event.target.value + "&", ""));
+        // }
     }
 
     useEffect (() => {
@@ -37,7 +37,7 @@ export default function CategoriesFilter ( {updateFilter}: FilterComponent ) {
                     data.map((actual: any, index: number) => {
                         return (
                             <div key={index}>
-                                <input onChange={handleChange} type="checkbox" name={"categoryId=" + actual.id} id="categoryOption" />
+                                <input onChange={handleChange} type="radio" value={"categoryId=" + actual.id} name="categoryOption" id="categoryOption" />
                                 <label htmlFor="categoryOption">{actual.name}</label>
                             </div>
                             // <p>{actual.name}</p>
