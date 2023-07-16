@@ -1,7 +1,10 @@
-.mainContent {
-    padding: 5rem;
+.mainContent, .mainContentOnSectioned {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+
+.mainContent {
+    padding: 5rem;
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
 }
@@ -12,4 +15,20 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+}
+
+.sectionedPage {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 1rem;
+    padding: 1rem;
+}
+
+.mainContentOnSectioned {
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+}
+
+.sideBar {
+
 }

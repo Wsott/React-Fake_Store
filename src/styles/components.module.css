@@ -253,3 +253,15 @@ a {
     line-height: 20px;
     letter-spacing: -0.2px;
 }
+
+/* Products */
+.productsDisplay {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Category filter */
+.categoryFilterContainer {
+    display: flex;
+    flex-direction: column;
+}
