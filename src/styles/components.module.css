@@ -196,3 +196,60 @@ a {
 .welcomeMessage {
     margin: 0 1rem;
 }
+
+/* LandingMessage */
+.messageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageSubcontainer, .messageSubcontainerRight, .messageSubcontainerLeft {
+    background-color: red;
+    margin: 2rem 10rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 15px;
+
+    background-color: var(--color-primario);
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.messageSubcontainerRight {
+    transform: translateX(25px);
+}
+
+.messageSubcontainerLeft {
+    transform: translateX(-25px);
+}
+
+.messageImage {
+    width: 100%;
+    align-self: center;
+}
+
+.messageTextContainer {
+    padding: 0 0.5rem;
+    grid-column: span 3;
+    /* background-color: blue; */
+}
+
+.messageTitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.55px;
+}
+
+.message {
+    font-style: italic;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+}
