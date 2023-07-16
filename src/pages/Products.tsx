@@ -17,9 +17,18 @@ interface ProductsSearchData {
     modifiers: string;
 }
 
+interface ProductData {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: any;
+    images: any;
+}
+
 export default function Products () {
     const { state } = useLocation();
-    const [ data, setData ] = useState();
+    const [ data, setData ] = useState<ProductData[]>();
     const productsMutation = useMutation(
         (data: ProductsSearchData) => {
             console.log(URL_PRODUCTS + data.modifiers);
