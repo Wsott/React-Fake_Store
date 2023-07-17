@@ -263,6 +263,15 @@ a {
     letter-spacing: -0.55px;
 }
 
+.messageSubtitle {
+    margin: 0.5rem 0 0 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.55px;
+}
+
 .message {
     font-style: italic;
     margin: 0;
@@ -282,6 +291,10 @@ a {
 .categoryFilterContainer {
     display: flex;
     flex-direction: column;
+}
+
+.title {
+
 }
 
 /* Centered title */

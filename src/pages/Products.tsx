@@ -28,7 +28,6 @@ export default function Products () {
     const [ data, setData ] = useState<ProductData[]>();
     const productsMutation = useMutation(
         (data: ProductsSearchData) => {
-            console.log(URL_PRODUCTS + data.modifiers);
             return axios.get(URL_PRODUCTS + data.modifiers);
         },
         {
@@ -45,7 +44,6 @@ export default function Products () {
     }, []);
 
     function updateFilter (newFilter: string) {
-        console.log(newFilter);
         productsMutation.mutate({modifiers: newFilter});
     }
 

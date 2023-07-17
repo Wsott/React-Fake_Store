@@ -23,6 +23,7 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
 
     function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
         if (event.target.checked) {
+            console.log (event.target.value)
             setFilter (event.target.value + "&");
         }
     }
@@ -36,7 +37,6 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
     }
 
     useEffect (() => {
-        console.log("?" + filter);
         updateFilter("?" + titleFilter + priceFilter + filter);
         
         if (psf) {
@@ -48,7 +48,11 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
     return (
         <div>
             <div className={style.categoryFilterContainer}>
-                <p>Categories</p>
+                <p className={style.messageTitle}>Categories</p>
+                <div>
+                    <input onChange={handleChange} type="radio" value={""} name="categoryOption" id="categoryOption" />
+                        <label htmlFor="categoryOption">{"All"}</label>
+                </div>
                 {status == "success" &&
                     data.map((actual: any, index: number) => {
                         return (
@@ -60,11 +64,10 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
                             </div>
                         )
                     })
-                    
                 }
-                <label htmlFor="nameFilter">Filter by name</label>
+                <label className={style.messageSubtitle} htmlFor="nameFilter">Filter by name</label>
                 <input onChange={handleTitleFilter} type="text" name="nameFilter" id="nameFilter" />
-                <label htmlFor="priceFilter">Filter by price</label>
+                <label className={style.messageSubtitle} htmlFor="priceFilter">Filter by price</label>
                 <input onChange={handlePriceFilter} type="number" name="priceFilter" id="priceFilter" min={1} defaultValue={1000} step={10}  />
             </div>
         </div>
