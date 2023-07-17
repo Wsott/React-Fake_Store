@@ -50,7 +50,7 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
             <div className={style.categoryFilterContainer}>
                 <p className={style.messageTitle}>Categories</p>
                 <div>
-                    <input onChange={handleChange} type="radio" value={""} name="categoryOption" id="categoryOption" />
+                    <input defaultChecked={preSelectedCategory === null} onChange={handleChange} type="radio" value={""} name="categoryOption" id="categoryOption" />
                         <label htmlFor="categoryOption">{"All"}</label>
                 </div>
                 {status == "success" &&
