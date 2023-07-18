@@ -11,7 +11,7 @@ export default function Error () {
 
     return (
         <div className={style.statusContainer}>
-            <img className={style.loader} src="src\assets\error.gif" alt="Something went wrong!" />
+            <img className={style.loader} src="/error.gif" alt="Something went wrong!" />
             <span className={style.loaderMessage}>{messages[Math.floor(Math.random() * 5)]}</span>
         </div>
     );

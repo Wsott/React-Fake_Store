@@ -5,10 +5,10 @@ import Card from "../components/unique/Card";
 import { Link } from "react-router-dom";
 import Loading from "../components/shared/Loading";
 import Error from "../components/shared/Error";
-import { URL, QUERY_KEY_CATEGORIES} from "../functions/GlobalConstants";
+import { URL_CATEGORIES, QUERY_KEY_CATEGORIES} from "../functions/GlobalConstants";
 
 function FetchWrapper () {
-    return useFetch(URL);
+    return useFetch(URL_CATEGORIES);
 }
 
 export default function Categories () {
@@ -22,7 +22,7 @@ export default function Categories () {
                 {status == "success" &&
                     data.map((actual: any, index: number) => {
                         return (
-                            <Link key={index} to="/products" state={{filter: actual.name}}>
+                            <Link key={index} to="/products" state={{name: actual.name, filter: "?categoryId=" + actual.id}}>
                                 <div className={style.gridCell}>
                                     <Card 
                                         id={actual.id} 

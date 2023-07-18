@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import style from "../../styles/components.module.css";
+import CurrentUser from "./CurrentUser";
+import { useContext } from "react";
+import UserContext from "../../context/UserProvider";
 
 export default function Navbar () {
+    const { user } = useContext(UserContext);
+
     return (
         <div className={style.navbar}>
             <div className={style.content}>
@@ -18,9 +23,14 @@ export default function Navbar () {
                     <span className={style.links}>About</span>
                 </div>
                 <div>
-                    <Link className={style.loginLink} to="/login">
-                        Login
-                    </Link>
+                    {
+                        (user !== "")?
+                            <CurrentUser name={user}/>
+                        :
+                            <Link className={style.loginLink} to="/login">
+                                Login
+                            </Link>
+                    }
                 </div>
             </div>
         </div>
