@@ -5,12 +5,14 @@ import UserContext from "../../context/UserProvider";
 import { useNavigate } from "react-router-dom";
 
 export default function CurrentUser ( {name}: LoggedUser) {
-    const { setUser } = useContext(UserContext);
+    const { setUser, logOut } = useContext(UserContext);
     const navigate = useNavigate();
 
     function handleLogOut () {
-        localStorage.removeItem("name");
-        localStorage.removeItem("session");
+        logOut();
+        //saludar();
+        // localStorage.removeItem("name");
+        // localStorage.removeItem("session");
         setUser("");
         navigate("/");
     }
