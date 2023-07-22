@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Login () {
     const navigate = useNavigate();
     useEffect (() => {
-        if (localStorage.getItem("name") != null) {
+        if (localStorage.getItem("session") != null) {
             navigate("/");
         }
     }, []);
