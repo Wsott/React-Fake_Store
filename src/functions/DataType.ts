@@ -48,3 +48,11 @@ export interface UserContextType {
   setRole: React.Dispatch<React.SetStateAction<string>>;
   logOut: Function;
 }
+
+export interface CreateProductData {
+    title: string;
+    price: number;
+    description: string;
+    categoryId: number;
+    images: Array<string>;
+}

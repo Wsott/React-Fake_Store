@@ -9,6 +9,7 @@ import CartDetail from './pages/CartDetail'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Navbar from './components/shared/Navbar'
 import AdminProductForm from './components/unique/AdminProductForm'
+import AdminProduct from './pages/AdminProduct'
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ function App() {
           <Route path="/categories" element={<Categories/>}/>
           <Route path="/products" element={<Products/>}/>
           <Route path="/products/:id" element={<Products/>}/>
-          <Route path="/products/create" element={<AdminProductForm/>}/>
+          <Route path="/products/create" element={<AdminProduct/>}/>
           <Route path="/products/edit/:id" element={<Products/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
         </Routes>
