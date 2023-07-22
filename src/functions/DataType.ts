@@ -58,3 +58,12 @@ export interface CreateProductData {
     categoryId: number;
     images: Array<string>;
 }
+
+export interface ProductData {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: any;
+    images: any;
+}

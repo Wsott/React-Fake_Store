@@ -5,9 +5,12 @@ import Loading from "../shared/Loading";
 import style from "../../styles/components.module.css";
 import { CreateProductData } from "../../functions/DataType";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function AdminProductForm () {
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
+    const {id}: any = useParams();
+    
     const registerProductMutation = useMutation(
         (data: CreateProductData) => {
             return axios.post(URL_CREATE_PRODUCT, data);
@@ -25,7 +28,7 @@ export default function AdminProductForm () {
         const categoryId: number = formData.get("category") as number;
         const images: Array<string> = new Array(formData.get("image") as string);
 
-        const data: CreateProductData = {
+        const productData: CreateProductData = {
             title,
             price,
             description,
@@ -33,8 +36,8 @@ export default function AdminProductForm () {
             images
         }
 
-        console.log(data);
-        registerProductMutation.mutate(data);
+        console.log(productData);
+        registerProductMutation.mutate(productData);
         
     }
     

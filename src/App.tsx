@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import Navbar from './components/shared/Navbar'
 import AdminProductForm from './components/unique/AdminProductForm'
 import AdminProduct from './pages/AdminProduct'
+import AdminProductsList from './pages/AdminProductsList'
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/products/create" element={<AdminProduct/>}/>
           <Route path="/products/edit/:id" element={<Products/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
+          <Route path="/admin-panel" element={<AdminProductsList/>}/>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

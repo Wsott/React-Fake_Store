@@ -29,6 +29,44 @@
     grid-row-gap: 1rem;
 }
 
+.adminMainContent {
+    /* padding: 5rem; */
+    margin: 0 5rem 2.5rem 5rem;
+    /* background-color: red; */
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+td, th {
+    text-align: center;
+}
+
+th {
+    font-size: large;
+}
+
+
+.commonRow {
+    /* background-color: blue; */
+    height: 2rem;
+}
+
+.commonRow:hover {
+    background-color: gainsboro;
+    font-weight: bolder;
+}
+
+.headerRow {
+    background-color: grey;
+}
+
 .sideBar {
 
 }

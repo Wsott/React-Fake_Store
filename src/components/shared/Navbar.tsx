@@ -50,7 +50,7 @@ export default function Navbar () {
                         <span className={style.links}>Products</span>
                     </Link>
                     {(role === "admin") &&
-                        <Link to="/products/create">
+                        <Link to="/admin-panel">
                             <span className={style.links}>AdminPanel</span>
                         </Link>
                     }
