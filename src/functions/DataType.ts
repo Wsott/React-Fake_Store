@@ -45,5 +45,6 @@ export interface AuthContextData {
 export interface UserContextType {
   user: string;
   setUser: React.Dispatch<React.SetStateAction<string>>;
+  setRole: React.Dispatch<React.SetStateAction<string>>;
   logOut: Function;
 }

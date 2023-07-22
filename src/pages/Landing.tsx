@@ -7,7 +7,7 @@ import { URL_PROFILE_FETCH } from "../functions/GlobalConstants";
 import LandingMessage from "../components/unique/LandingMessage";
 
 export default function Landing () {
-    const { setUser } = useContext(UserContext);
+    const { setUser, setRole } = useContext(UserContext);
     
     const nameMutation = useMutation(
         (data: LoginToken) => {
@@ -18,7 +18,10 @@ export default function Landing () {
         {
             onSuccess: (data) => {
                 const name = data.data.name as string;
-                setUser(name)
+                const role = data.data.role as string;
+
+                setUser(name);
+                setRole(role);
             }
         }
     )

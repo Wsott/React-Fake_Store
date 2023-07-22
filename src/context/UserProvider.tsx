@@ -4,11 +4,13 @@ import { UserContextType } from "../functions/DataType";
 const UserContext = createContext<UserContextType>({
   user: "",
   setUser: () => {return},
+  setRole: () => {return},
   logOut: () => {return}
 });
 
 export const UserProvider = ({ children }: any) => {
     const [user, setUser] = useState("");
+    const [role, setRole] = useState("");
 
     const logOut = () => {
         localStorage.removeItem("name");
@@ -16,7 +18,7 @@ export const UserProvider = ({ children }: any) => {
     }
 
     return (
-        <UserContext.Provider value={{ user, setUser, logOut }}>
+        <UserContext.Provider value={{ user, setUser, setRole, logOut }}>
             {children}
         </UserContext.Provider>
     )
