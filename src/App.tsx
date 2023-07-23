@@ -32,7 +32,6 @@ function App() {
           <Route path="/products/edit/:id" element={<AdminProductForm/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
           <Route path="/admin-panel" element={<AdminPanel/>}/>
-          <Route path="/debug" element={<ConfirmationDialog/>}/>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
