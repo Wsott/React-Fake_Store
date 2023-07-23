@@ -1,21 +1,58 @@
 import { useMutation, useQuery } from "react-query";
-import { QUERY_KEY_CATEGORIES, URL_CREATE_PRODUCT } from "../../functions/GlobalConstants";
+import { QUERY_KEY_CATEGORIES, URL_CREATE_PRODUCT, URL_PRODUCTS } from "../../functions/GlobalConstants";
 import { FetchWrapper } from "../../functions/Functions";
 import Loading from "../shared/Loading";
 import style from "../../styles/components.module.css";
 import { CreateProductData } from "../../functions/DataType";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function AdminProductForm () {
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
+    const [productData, setProductData] = useState<CreateProductData|null>(null)
     const {id}: any = useParams();
     
     const registerProductMutation = useMutation(
         (data: CreateProductData) => {
-            return axios.post(URL_CREATE_PRODUCT, data);
+            if (productData == null) {
+                return axios.post(URL_CREATE_PRODUCT, data);
+            }
+            else {
+                return axios.put(URL_CREATE_PRODUCT + id, data);
+            }
+        }
+    );
+
+    const productDataMutation = useMutation(
+        (id: string) => {
+            return axios.get(URL_PRODUCTS + id);
+        },
+        {
+            onSuccess: (data) => {
+                console.log(data);
+                const foundProduct: CreateProductData = {
+                    title: data.data.title,
+                    price: data.data.price,
+                    description: data.data.description,
+                    categoryId: data.data.category.id,
+                    images: data.data.images
+                }
+                console.log("=> " + foundProduct);
+                setProductData(foundProduct);
+            }
         }
     )
+
+    useEffect(() => {
+        if (typeof(id) == "string") {
+            //alert("TENGO QUE ACTUALIZAR: " + typeof(id));
+            productDataMutation.mutate(id);
+        }
+        else {
+            //alert("NO PASA NADA PORQUE ESTOY CREANDO");
+        }
+    }, [])
 
     function handleForm (event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -50,13 +87,13 @@ export default function AdminProductForm () {
                 <form onSubmit={handleForm} className={style.adminProductContainer}>
                     <p className={style.importantText}>Admin panel for products</p>
                     <label htmlFor="title">Title</label>
-                    <input className={style.loginInput} type="text" name="title" id="title" />
+                    <input className={style.loginInput} type="text" name="title" id="title" defaultValue={productData?.title} />
                     <div className={style.dualContainer}>
                         <label htmlFor="price">Price</label>
                         <label htmlFor="category">Category</label>
-                        <input className={style.loginInput} type="number" name="price" id="price" min={1} defaultValue={1} />
+                        <input className={style.loginInput} type="number" name="price" id="price" min={1} defaultValue={productData?.price} />
 
-                        <select className={style.loginInput} name="category" id="category" defaultValue={"selectOne"}>
+                        <select className={style.loginInput} name="category" id="category" defaultValue={(productData)? productData?.categoryId : "selectOne"}>
                         <option value={"selectOne"} disabled={true}>Select a category</option>
                         {
                             data.map ((actual: any, index: number) => {
@@ -68,10 +105,10 @@ export default function AdminProductForm () {
                     </select>
                     </div>
                     <label htmlFor="desc">Description</label>
-                    <textarea className={style.fixedTextArea} name="desc" id="desc" cols={50} rows={5} />
+                    <textarea className={style.fixedTextArea} name="desc" id="desc" cols={50} rows={5} defaultValue={productData?.description} />
                     
                     <label htmlFor="image">Image</label>
-                    <input className={style.loginInput} type="url" name="image" id="image" />
+                    <input className={style.loginInput} type="url" name="image" id="image" defaultValue={productData?.images} />
                     <button className={style.genericFormButton}>Update data</button>
                 </form>
                 </>
