@@ -1,18 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useMutation } from "react-query";
-import { URL_PRODUCTS } from "../functions/GlobalConstants";
-import { ProductData } from "../functions/DataType";
+import { Link } from "react-router-dom";
+import Loading from "../components/shared/Loading";
+import { CategoryData } from "../functions/DataType";
+import { URL_CATEGORIES } from "../functions/GlobalConstants";
 import style from "../styles/components.module.css";
 import pageStyle from "../styles/pages.module.css";
-import Loading from "../components/shared/Loading";
-import { Link } from "react-router-dom";
 
-export default function AdminProductsList () {
-    const [ data, setData ] = useState<ProductData[]>();
+export default function AdminCategoriesList () {
+    const [ data, setData ] = useState<CategoryData[]>();
     const productsMutation = useMutation(
         () => {
-            return axios.get(URL_PRODUCTS);
+            return axios.get(URL_CATEGORIES);
         },
         {
             onSuccess: (data) => {
@@ -28,7 +28,7 @@ export default function AdminProductsList () {
     return (
         <>
             <div className={style.centeredTitle}>
-                <h1>List of products</h1>
+                <h1>List of categories</h1>
             </div>
             <div className={pageStyle.adminMainContent}>
                     {
@@ -39,10 +39,7 @@ export default function AdminProductsList () {
                                     ID
                                 </th>
                                 <th>
-                                    Title
-                                </th>
-                                <th>
-                                    Price
+                                    Name
                                 </th>
                                 <th>
                                     Operations
@@ -53,10 +50,9 @@ export default function AdminProductsList () {
                                     return (
                                     <tr className={pageStyle.commonRow}>
                                         <td>{actual.id}</td>
-                                        <td>{actual.title}</td>
-                                        <td>{actual.price}</td>
+                                        <td>{actual.name}</td>
                                         <td key={index}>
-                                            <Link to={"/products/edit/" + actual.id}>
+                                            <Link to={""}>
                                                 <button>
                                                     Edit
                                                 </button>

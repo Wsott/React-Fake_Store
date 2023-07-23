@@ -67,3 +67,9 @@ export interface ProductData {
     category: any;
     images: any;
 }
+
+export interface CategoryData {
+    id: number;
+    name: string;
+    image: any;
+}

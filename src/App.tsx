@@ -11,6 +11,7 @@ import Navbar from './components/shared/Navbar'
 import AdminProductForm from './components/unique/AdminProductForm'
 import AdminProduct from './pages/AdminProduct'
 import AdminProductsList from './pages/AdminProductsList'
+import AdminPanel from './pages/AdminPanel'
 
 const queryClient = new QueryClient();
 
@@ -29,7 +30,7 @@ function App() {
           <Route path="/products/create" element={<AdminProduct/>}/>
           <Route path="/products/edit/:id" element={<AdminProductForm/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
-          <Route path="/admin-panel" element={<AdminProductsList/>}/>
+          <Route path="/admin-panel" element={<AdminPanel/>}/>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
