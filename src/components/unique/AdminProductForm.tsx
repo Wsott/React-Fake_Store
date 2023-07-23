@@ -58,11 +58,12 @@ export default function AdminProductForm () {
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
+//const price: number | null = priceValue !== null ? Number(priceValue) : null;
 
         const title: string = formData.get("title") as string;
-        const price: number = formData.get("price") as number;
+        const price: number | null = (formData.get("price") != null)? Number(formData.get("price")) : 0;
         const description: string = formData.get("desc") as string;
-        const categoryId: number = formData.get("category") as number;
+        const categoryId: number | null = (formData.get("category") != null)? Number(formData.get("category")) : 0;
         const images: Array<string> = new Array(formData.get("image") as string);
 
         const productData: CreateProductData = {

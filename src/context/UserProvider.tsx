@@ -1,8 +1,5 @@
 import { createContext, useState } from "react";
-import { LoginToken, UserContextType } from "../functions/DataType";
-import { useMutation } from "react-query";
-import { URL_PROFILE_FETCH } from "../functions/GlobalConstants";
-import axios from "axios";
+import { UserContextType } from "../functions/DataType";
 
 const UserContext = createContext<UserContextType>({
   user: "",

@@ -1,5 +1,4 @@
 import { useQuery } from "react-query";
-import useFetch from "../hooks/useFetch/useFetch";
 import style from "../styles/pages.module.css";
 import Card from "../components/unique/Card";
 import { Link } from "react-router-dom";

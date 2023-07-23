@@ -6,7 +6,6 @@ import { ProductData } from "../functions/DataType";
 import style from "../styles/components.module.css";
 import pageStyle from "../styles/pages.module.css";
 import Loading from "../components/shared/Loading";
-import Card from "../components/unique/Card";
 import { Link } from "react-router-dom";
 
 export default function AdminProductsList () {
@@ -56,7 +55,7 @@ export default function AdminProductsList () {
                                         <td>{actual.id}</td>
                                         <td>{actual.title}</td>
                                         <td>{actual.price}</td>
-                                        <td>
+                                        <td key={index}>
                                             <Link to={"/products/edit/" + actual.id}>
                                                 <button>
                                                     Edit
