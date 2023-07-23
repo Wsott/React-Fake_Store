@@ -99,7 +99,7 @@ export default function AdminProductForm () {
                         {
                             data.map ((actual: any, index: number) => {
                                 return (
-                                    <option value={actual.id}>{actual.name}</option>
+                                    <option key={index} value={actual.id}>{actual.name}</option>
                                 )
                             })
                         }
