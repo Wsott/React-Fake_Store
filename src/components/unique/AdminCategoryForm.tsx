@@ -3,8 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { useMutation } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { CreateCategoryData } from "../../functions/DataType";
-import { URL_CATEGORIES, URL_PRODUCTS } from "../../functions/GlobalConstants";
-import Loading from "../shared/Loading";
+import { URL_CATEGORIES } from "../../functions/GlobalConstants";
 import style from "../../styles/components.module.css";
 import UserContext from "../../context/UserProvider";
 

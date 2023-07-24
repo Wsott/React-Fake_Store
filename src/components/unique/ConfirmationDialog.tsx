@@ -22,7 +22,7 @@ export default function ConfirmationDialog ( {name, id, type, updateFunction}: D
             }
         },
         {
-            onSuccess: (data) => {
+            onSuccess: () => {
                 updateFunction();
             }
         }
