@@ -13,6 +13,8 @@ import AdminProduct from './pages/AdminProduct'
 import AdminProductsList from './pages/AdminProductsList'
 import AdminPanel from './pages/AdminPanel'
 import ConfirmationDialog from './components/unique/ConfirmationDialog'
+import AdminCategoryForm from './components/unique/AdminCategoryForm'
+import AdminCategory from './pages/AdminCategory'
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,8 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Register/>}/>
           <Route path="/categories" element={<Categories/>}/>
+          <Route path="/categories/create" element={<AdminCategory/>}/>
+          <Route path="/categories/edit/:id" element={<AdminCategoryForm/>}/>
           <Route path="/products" element={<Products/>}/>
           <Route path="/products/:id" element={<Products/>}/>
           <Route path="/products/create" element={<AdminProduct/>}/>

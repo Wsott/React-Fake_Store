@@ -68,8 +68,13 @@ export interface ProductData {
     images: any;
 }
 
+export interface CreateCategoryData {
+    name: string;
+    image: string;
+}
+
 export interface CategoryData {
     id: number;
     name: string;
-    image: any;
+    image: string;
 }

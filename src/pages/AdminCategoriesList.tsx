@@ -71,7 +71,7 @@ export default function AdminCategoriesList () {
                                             <td>{actual.id}</td>
                                             <td>{actual.name}</td>
                                             <td key={index}>
-                                                <Link to={""}>
+                                                <Link to={"/categories/edit/" + actual.id}>
                                                     <button>
                                                         Edit
                                                     </button>
