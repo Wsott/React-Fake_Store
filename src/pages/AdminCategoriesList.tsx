@@ -1,19 +1,23 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useMutation } from "react-query";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/shared/Loading";
 import { CategoryData } from "../functions/DataType";
 import { URL_CATEGORIES } from "../functions/GlobalConstants";
 import style from "../styles/components.module.css";
 import pageStyle from "../styles/pages.module.css";
 import ConfirmationDialog from "../components/unique/ConfirmationDialog";
+import UserContext from "../context/UserProvider";
 
 export default function AdminCategoriesList () {
     const [ data, setData ] = useState<CategoryData[]>();
     const [ deleteID, setDeleteID ] = useState<number>(0);
     const [ deleteName, setDeleteName ] = useState<string>("");
     const [ dialogVisible, setVisibility ] = useState(false);
+    const { role } = useContext(UserContext);
+    const navigate = useNavigate();
+
 
     const productsMutation = useMutation(
         () => {
@@ -27,6 +31,10 @@ export default function AdminCategoriesList () {
     )
 
     useEffect (() => {
+        if (role != "admin") {
+            navigate("/");
+        }
+
         productsMutation.mutate();
     }, []);
 

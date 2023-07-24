@@ -5,13 +5,17 @@ import Loading from "../shared/Loading";
 import style from "../../styles/components.module.css";
 import { CreateProductData } from "../../functions/DataType";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "../../context/UserProvider";
 
 export default function AdminProductForm () {
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
     const [productData, setProductData] = useState<CreateProductData|null>(null)
     const {id}: any = useParams();
+    const { role } = useContext(UserContext);
+    const navigate = useNavigate();
+
     
     const registerProductMutation = useMutation(
         (data: CreateProductData) => {
@@ -45,6 +49,10 @@ export default function AdminProductForm () {
     )
 
     useEffect(() => {
+        if (role != "admin") {
+            navigate("/");
+        }
+
         if (typeof(id) == "string") {
             //alert("TENGO QUE ACTUALIZAR: " + typeof(id));
             productDataMutation.mutate(id);

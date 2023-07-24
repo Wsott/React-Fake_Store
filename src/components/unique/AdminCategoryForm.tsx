@@ -1,14 +1,17 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useMutation } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CreateCategoryData } from "../../functions/DataType";
 import { URL_CATEGORIES, URL_PRODUCTS } from "../../functions/GlobalConstants";
 import Loading from "../shared/Loading";
 import style from "../../styles/components.module.css";
+import UserContext from "../../context/UserProvider";
 
 export default function AdminCategoryForm () {
     //const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
+    const { role } = useContext(UserContext);
+    const navigate = useNavigate();
     const [categoryData, setCategoryData] = useState<CreateCategoryData|null>(null)
     const {id}: any = useParams();
     
@@ -41,6 +44,10 @@ export default function AdminCategoryForm () {
     )
 
     useEffect(() => {
+        if (role != "admin") {
+            navigate("/");
+        }
+
         if (typeof(id) == "string") {
             // alert("TENGO QUE ACTUALIZAR: " + typeof(id));
             categoryDataMutation.mutate(id);
