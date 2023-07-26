@@ -107,8 +107,8 @@ export default function AdminProductForm () {
                         <label htmlFor="category">Category</label>
                         <input className={style.loginInput} type="number" name="price" id="price" min={1} defaultValue={productData?.price} />
 
-                        <select className={style.loginInput} name="category" id="category" defaultValue={(productData)? productData?.categoryId : "selectOne"}>
-                        <option value={"selectOne"} disabled={true}>Select a category</option>
+                        <select className={style.optionInput} name="category" id="category" defaultValue={(productData)? productData?.categoryId : "selectOne"}>
+                        <option className={style.optionInput} value={"selectOne"} disabled={true}>Select a category</option>
                         {
                             data.map ((actual: any, index: number) => {
                                 return (
