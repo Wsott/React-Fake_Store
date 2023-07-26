@@ -22,6 +22,11 @@ export default function AdminCategoryForm () {
             else {
                 return axios.put(URL_CATEGORIES + id, data);
             }
+        },
+        {
+            onSuccess: () => {
+                navigate("/admin-panel");
+            }
         }
     );
 

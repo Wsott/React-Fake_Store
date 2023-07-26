@@ -25,6 +25,11 @@ export default function AdminProductForm () {
             else {
                 return axios.put(URL_CREATE_PRODUCT + id, data);
             }
+        },
+        {
+            onSuccess: () => {
+                navigate("/admin-panel");
+            }
         }
     );
 

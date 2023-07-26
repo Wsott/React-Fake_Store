@@ -3,7 +3,7 @@ import AdminProductsList from "./AdminProductsList";
 import AdminCategoriesList from "./AdminCategoriesList";
 import pageStyle from "../styles/pages.module.css";
 import UserContext from "../context/UserProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AdminPanel () {
     const { role } = useContext(UserContext);
@@ -21,6 +21,9 @@ export default function AdminPanel () {
             <div className={pageStyle.rowOfButtons}>
                 <button className={pageStyle.individualButton} onClick={() => {setPrimaryView(true)}}>Show products list</button>
                 <button className={pageStyle.individualButton} onClick={() => {setPrimaryView(false)}}>Show categories list</button>
+                <Link to={(primaryView)? "/products/create" : "/categories/create"}>
+                    <button className={pageStyle.individualButton}>Register a new {(primaryView)? "product" : "category"}</button>
+                </Link>
             </div>
             {
                 (primaryView)?
