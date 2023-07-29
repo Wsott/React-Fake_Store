@@ -44,6 +44,37 @@ export interface AuthContextData {
 
 export interface UserContextType {
   user: string;
+  role: string;
   setUser: React.Dispatch<React.SetStateAction<string>>;
+  setRole: React.Dispatch<React.SetStateAction<string>>;
   logOut: Function;
+  logIn: Function;
+}
+
+export interface CreateProductData {
+    title: string;
+    price: number;
+    description: string;
+    categoryId: number;
+    images: Array<string>;
+}
+
+export interface ProductData {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: any;
+    images: any;
+}
+
+export interface CreateCategoryData {
+    name: string;
+    image: string;
+}
+
+export interface CategoryData {
+    id: number;
+    name: string;
+    image: string;
 }

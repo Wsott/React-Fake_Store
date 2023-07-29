@@ -1,7 +1,6 @@
 # React-Fake_Store
 
-Final project using React and Platzi Fake Store API (https://fakeapi.platzi.com/).
----
+## Final project using React and Platzi Fake Store API (https://fakeapi.platzi.com/).
 
 Author: Gomez Olivera, Emiliano
 
@@ -11,7 +10,7 @@ Start date: 2023/07/04 05:44
 
 2nd Milestone: 2023/07/18 13:55
 
-3rd Milestone: 2023/0X/XX XX:XX
+3rd Milestone: 2023/07/28 21:XX
 
 4th Milestone: 2023/0X/XX XX:XX
 

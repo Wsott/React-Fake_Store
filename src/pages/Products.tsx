@@ -1,6 +1,6 @@
 import { useMutation } from "react-query";
 import { useLocation } from "react-router-dom";
-import { URL_PRODUCTS } from "../functions/GlobalConstants";
+import { NO_IMAGE, URL_PRODUCTS } from "../functions/GlobalConstants";
 import Card from "../components/unique/Card";
 import pageStyle from "../styles/pages.module.css";
 import CategoriesFilter from "../components/unique/CategoriesFilter";
@@ -66,7 +66,7 @@ export default function Products () {
                                     key={index}
                                     id={actual.id} 
                                     name={actual.title + " - $" + actual.price} 
-                                    image={actual.images[0]} 
+                                    image={actual.images[0].replace("unnamed.jpg", NO_IMAGE)} 
                                     creationDate={null} 
                                     updateDate={null}/>
                             })
