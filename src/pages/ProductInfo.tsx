@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import { URL_PRODUCTS } from "../functions/GlobalConstants";
 import axios from "axios";
 import Loading from "../components/shared/Loading";
-import { useEffect, useState } from "react";
-import { ProductData } from "../functions/DataType";
+import { useContext, useEffect, useState } from "react";
+import { CartData, CartItem, ProductData } from "../functions/DataType";
 import pageStyle from "../styles/pages.module.css";
 import { Separator } from "../components/shared/Separator";
+import CartContext from "../context/CartProvider";
 
 export default function ProductInfo () {
+    const cartContextData = useContext(CartContext);
+
     const {id}: any = useParams();
     const [data, setData] = useState<ProductData>();
     const findProductMutation = useMutation(
@@ -26,6 +29,18 @@ export default function ProductInfo () {
         findProductMutation.mutate(id);
     }, [])
 
+    function handleClick () {
+        if (data) {
+            const newItem: CartItem = {
+                id: data.id,
+                title: data.title,
+                price: data.price,
+                ammount: 1
+            };
+            
+            cartContextData.addItem(newItem);
+        }
+    }
     
     return (
         <>
@@ -40,7 +55,7 @@ export default function ProductInfo () {
                         <Separator/>
                         <p className={pageStyle.productDescription}>{data.description}</p>
                         <p className={pageStyle.productPrice}>${data.price}</p>
-                        <button className={pageStyle.addToCart}>Add to the cart</button>
+                        <button onClick={handleClick} className={pageStyle.addToCart}>Add to the cart</button>
                     </div>
                 </div>
             :
