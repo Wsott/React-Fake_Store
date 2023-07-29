@@ -203,6 +203,7 @@ a {
 
 .separatorDecoration {
     margin: 0 0.25rem;
+    font-weight: bolder;
 }
 
 .separatorLines {

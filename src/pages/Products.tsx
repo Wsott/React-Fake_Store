@@ -1,5 +1,5 @@
 import { useMutation } from "react-query";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NO_IMAGE, URL_PRODUCTS } from "../functions/GlobalConstants";
 import Card from "../components/unique/Card";
 import pageStyle from "../styles/pages.module.css";
@@ -62,13 +62,17 @@ export default function Products () {
                     {
                         (data)?
                             data.map((actual: any, index: number) => {
-                                return <Card 
-                                    key={index}
-                                    id={actual.id} 
-                                    name={actual.title + " - $" + actual.price} 
-                                    image={actual.images[0].replace("unnamed.jpg", NO_IMAGE)} 
-                                    creationDate={null} 
-                                    updateDate={null}/>
+                                return (
+                                    <Link to={"/products/" + actual.id}>
+                                        <Card 
+                                        key={index}
+                                        id={actual.id} 
+                                        name={actual.title + " - $" + actual.price} 
+                                        image={actual.images[0].replace("unnamed.jpg", NO_IMAGE)} 
+                                        creationDate={null} 
+                                        updateDate={null}/>
+                                    </Link>
+                                )
                             })
                         :
                             <Loading/>

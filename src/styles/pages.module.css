@@ -1,3 +1,52 @@
+.centeredContent {
+    display: flex;
+    margin: 2.5rem;
+    background-color: var(--color-primario);
+    border-radius: 10px;
+}
+
+.productImage {
+    width: 25vw;
+    margin: 2rem;
+}
+
+.productInfo {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+.productTitle {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.productDescription {
+    font-size: large;
+    margin: 0;
+}
+
+.productPrice {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.addToCart {
+    font-size: x-large;
+    border-radius: 10px;
+    max-width: max-content;
+    padding: 0.25rem 1rem;
+}
+
+.productImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
 .mainContent, .mainContentOnSectioned {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
