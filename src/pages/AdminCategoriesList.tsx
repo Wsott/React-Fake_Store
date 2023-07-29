@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../components/shared/Loading";
 // import { CategoryData } from "../functions/DataType";
-import { QUERY_KEY_CATEGORIES, URL_CATEGORIES } from "../functions/GlobalConstants";
+import { QUERY_KEY_CATEGORIES } from "../functions/GlobalConstants";
 import style from "../styles/components.module.css";
 import pageStyle from "../styles/pages.module.css";
 import ConfirmationDialog from "../components/unique/ConfirmationDialog";
