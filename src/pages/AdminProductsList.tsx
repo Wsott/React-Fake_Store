@@ -1,41 +1,43 @@
-import axios from "axios";
+// import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useMutation } from "react-query";
-import { URL_PRODUCTS } from "../functions/GlobalConstants";
-import { ProductData } from "../functions/DataType";
+import { useQuery } from "react-query";
+import { QUERY_KEY_PRODUCTS } from "../functions/GlobalConstants";
+// import { ProductData } from "../functions/DataType";
 import style from "../styles/components.module.css";
 import pageStyle from "../styles/pages.module.css";
 import Loading from "../components/shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
 import ConfirmationDialog from "../components/unique/ConfirmationDialog";
 import UserContext from "../context/UserProvider";
+import { FetchProductWrapper } from "../functions/Functions";
 
 export default function AdminProductsList () {
-    const [ data, setData ] = useState<ProductData[]>();
+    //const [ data, setData ] = useState<ProductData[]>();
     const [ deleteID, setDeleteID ] = useState<number>(0);
     const [ deleteName, setDeleteName ] = useState<string>("");
     const [ dialogVisible, setVisibility ] = useState(false);
     const { role } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const {data} = useQuery(QUERY_KEY_PRODUCTS, FetchProductWrapper);
 
-    const productsMutation = useMutation(
-        () => {
-            return axios.get(URL_PRODUCTS);
-        },
-        {
-            onSuccess: (data) => {
-                setData(data.data);
-            }
-        }
-    )
+    // const productsMutation = useMutation(
+    //     () => {
+    //         return axios.get(URL_PRODUCTS);
+    //     },
+    //     {
+    //         onSuccess: (data) => {
+    //             setData(data.data);
+    //         }
+    //     }
+    // )
 
     useEffect (() => {
         if (role != "admin") {
             navigate("/");
         }
 
-        productsMutation.mutate();
+        //productsMutation.mutate();
     }, []);
 
     function handleDelete (id: number, name: string) {
@@ -45,7 +47,7 @@ export default function AdminProductsList () {
     }
 
     function updateList () {
-        productsMutation.mutate();
+        //productsMutation.mutate();
         setVisibility(false);
     }
     
