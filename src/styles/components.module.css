@@ -357,7 +357,7 @@ a {
 
 .dialogContainer {
     padding: 5rem;
-    background-color: teal;
+    background-color: var(--color-secundario);
     border-radius: 10px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
@@ -370,7 +370,7 @@ a {
 
 /* CheckoutRow */
 .containerCheckoutRow {
-    background-color: red;
+    background-color: var(--color-secundario);
     margin: 1rem 2rem;
     display: flex;
     padding: 2rem;
@@ -381,7 +381,6 @@ a {
 
 .checkoutText {
     margin: 0;
-    background-color: green;
     align-self: center;
     margin-right: 2rem;
     font-size: larger;
@@ -392,7 +391,7 @@ a {
 
 .checkoutTextContainer {
     display: grid;
-    grid-template-columns: repeat(5, 17vw);
+    grid-template-columns: repeat(5, 15vw);
     height: 50px;
     margin: 0 2rem;
 }
@@ -418,8 +417,7 @@ a {
 } */
 
 .amountText {
-    margin: 0;
-    background-color: yellow;
+    margin: 0 1rem;
     width: max-content;
     height: min-content;
     align-self: center;
@@ -437,4 +435,41 @@ a {
     font-size: x-large;
     width: min-content;
     border-radius: 50%;
+}
+
+/* Footer */
+.footerContainer {
+    background-color: var(--color-terciario);
+    margin: 0;
+}
+
+.footerColumns {
+    display: grid;
+    grid-template-columns: repeat(3, 30vw);
+    grid-column-gap: 1rem;
+}
+
+.footerColumnContainer {
+    margin: 0 3rem;
+}
+
+.footerText, .fakeLinks, .fakeTitle, .footerCredits {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.fakeLinks:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.fakeTitle {
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.footerCredits {
+    padding: 2rem 0;
+    text-align: center;
 }

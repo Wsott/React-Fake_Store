@@ -35,7 +35,12 @@ export const CartProvider = ({children}: any) => {
     }
 
     const removeItem = (id: number) => {
-        setItems(items.filter(x => x.id != id));
+        const itemToDelete = items.find(x => x.id === id);
+
+        if (itemToDelete) {
+            setItems(items.filter(x => x.id != id));
+            setTotalPrice(totalPrice - (itemToDelete?.price * itemToDelete?.amount));
+        }
     }
 
     const changeAmount = (id: number, change: number) => {

@@ -144,9 +144,39 @@ th {
 }
 
 /* CartDetail */
+.cartDetailTitle, .emptyCart {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.cartDetailTitle {
+    font-size: xx-large;
+    margin: 2rem 0;
+}
+
+.emptyCart {
+    font-size: x-large;
+    margin: 5rem 0;
+}
+
 .checkOutContainer {
     background-color: var(--color-primario);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1rem 3rem;
     margin: 2rem;
+}
+
+.checkoutText {
+    font-size: xx-large;
+    text-align: right;
+    font-weight: bolder;
+}
+
+.checkoutButton {
+    font-size: xx-large;
+    margin: 0 1rem 1rem;
+    width: max-content;
+    border-radius: 10px;
+    padding: 0 1rem;
+    align-self: flex-end;
 }
