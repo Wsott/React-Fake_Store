@@ -7,6 +7,7 @@ import { LoginToken } from "../../functions/DataType";
 import axios from "axios";
 import { useMutation } from "react-query";
 import { URL_PROFILE_FETCH } from "../../functions/GlobalConstants";
+import CartDisplay from "./CartDisplay";
 
 export default function Navbar () {
     const { user, role, logIn } = useContext(UserContext);
@@ -49,12 +50,16 @@ export default function Navbar () {
                     <Link to="/products">
                         <span className={style.links}>Products</span>
                     </Link>
-                    {(role === "admin") &&
+                    {
+                    (role === "admin")?
                         <Link to="/admin-panel">
-                            <span className={style.links}>AdminPanel</span>
+                            <span className={style.links}>Admin Panel</span>
                         </Link>
+                    :
+                    (role === "customer") &&
+                        <CartDisplay/>
                     }
-                    <span className={style.links}>About</span>
+                    {/* <span className={style.links}>About</span> */}
                 </div>
                 <div>
                     {
