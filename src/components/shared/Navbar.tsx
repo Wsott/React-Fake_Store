@@ -57,7 +57,9 @@ export default function Navbar () {
                         </Link>
                     :
                     (role === "customer") &&
-                        <CartDisplay/>
+                        <Link to="/cart-detail">
+                            <CartDisplay/>
+                        </Link>
                     }
                     {/* <span className={style.links}>About</span> */}
                 </div>

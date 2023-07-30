@@ -35,6 +35,7 @@ export default function ProductInfo () {
                 id: data.id,
                 title: data.title,
                 price: data.price,
+                image: data.images[0],
                 ammount: 1
             };
             

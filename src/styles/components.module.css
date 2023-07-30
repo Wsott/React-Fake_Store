@@ -367,3 +367,68 @@ a {
     font-weight: bolder;
     text-align: center;
 }
+
+/* CheckoutRow */
+.containerCheckoutRow {
+    background-color: red;
+    margin: 1rem 2rem;
+    display: flex;
+    padding: 2rem;
+    height: 5rem;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.checkoutText {
+    margin: 0;
+    background-color: green;
+    align-self: center;
+    margin-right: 2rem;
+    font-size: larger;
+    font-weight: bold;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.checkoutTextContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 17vw);
+    height: 50px;
+    margin: 0 2rem;
+}
+
+.checkoutImage {
+    height: 100%;
+}
+
+.ammountContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .ammountCounter {
+    margin: 0;
+    align-self: center;
+    margin-right: 2rem;
+    font-size: larger;
+    font-weight: bold;
+    max-width: 100%;
+    overflow: hidden;
+} */
+
+.ammountText {
+    margin: 0;
+    background-color: yellow;
+    width: max-content;
+    height: min-content;
+    align-self: center;
+    font-size: larger;
+    font-weight: bold;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.ammountButton {
+    height: fit-content;
+}

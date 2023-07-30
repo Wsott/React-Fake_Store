@@ -91,4 +91,5 @@ export interface CartItem {
     title: string;
     price: number;
     ammount: number;
+    image: string;
 }
