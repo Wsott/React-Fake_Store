@@ -1,10 +1,10 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
 import { useParams } from "react-router-dom";
 import { URL_PRODUCTS } from "../functions/GlobalConstants";
 import axios from "axios";
 import Loading from "../components/shared/Loading";
 import { useContext, useEffect, useState } from "react";
-import { CartData, CartItem, ProductData } from "../functions/DataType";
+import { CartItem, ProductData } from "../functions/DataType";
 import pageStyle from "../styles/pages.module.css";
 import { Separator } from "../components/shared/Separator";
 import CartContext from "../context/CartProvider";

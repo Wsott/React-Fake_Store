@@ -17,7 +17,7 @@ export default function CartDetail () {
                     <>
                         {items.map((actual: any, key:number) => {
                         return (
-                            <CheckoutRow id={actual.id} title={actual.title} price={actual.price} amount={actual.amount} image={actual.image}/>
+                            <CheckoutRow key={key} id={actual.id} title={actual.title} price={actual.price} amount={actual.amount} image={actual.image}/>
                         )
                         })}
                         <Separator/>

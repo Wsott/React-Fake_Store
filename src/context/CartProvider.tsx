@@ -4,9 +4,9 @@ import { CartData, CartItem } from "../functions/DataType";
 const CartContext = createContext<CartData>({
     items: [],
     totalPrice: 0,
-    addItem: (item: CartItem) => {return},
-    removeItem: (id: number) => {return},
-    changeAmount: (id: number, change: number) => {return}
+    addItem: () => {return},
+    removeItem: () => {return},
+    changeAmount: () => {return}
 });
 
 export const CartProvider = ({children}: any) => {
