@@ -392,7 +392,7 @@ a {
 
 .checkoutTextContainer {
     display: grid;
-    grid-template-columns: repeat(4, 17vw);
+    grid-template-columns: repeat(5, 17vw);
     height: 50px;
     margin: 0 2rem;
 }
@@ -401,7 +401,7 @@ a {
     height: 100%;
 }
 
-.ammountContainer {
+.amountContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -417,7 +417,7 @@ a {
     overflow: hidden;
 } */
 
-.ammountText {
+.amountText {
     margin: 0;
     background-color: yellow;
     width: max-content;
@@ -429,6 +429,12 @@ a {
     overflow: hidden;
 }
 
-.ammountButton {
-    height: fit-content;
+.amountButton {
+    height: min-content;
+}
+
+.removeButton {
+    font-size: x-large;
+    width: min-content;
+    border-radius: 50%;
 }

@@ -5,7 +5,8 @@ const CartContext = createContext<CartData>({
     items: [],
     totalPrice: 0,
     addItem: (item: CartItem) => {return},
-    removeItem: (id: number) => {return}
+    removeItem: (id: number) => {return},
+    changeAmount: (id: number, change: number) => {return}
 });
 
 export const CartProvider = ({children}: any) => {
@@ -21,24 +22,35 @@ export const CartProvider = ({children}: any) => {
             const repeatedItem = items.find(x => x.id === item.id);
 
             if (repeatedItem) {
-                repeatedItem.ammount = repeatedItem.ammount + 1;
+                repeatedItem.amount = repeatedItem.amount + 1;
                 setTotalPrice (totalPrice + repeatedItem.price);
                 console.log("PRICE => ", totalPrice);
                 console.log("CART => ", items);
             }
         }
         else {
-            setTotalPrice(totalPrice + (item.price * item.ammount));
+            setTotalPrice(totalPrice + (item.price * item.amount));
             setItems([...items, item]);
         }
     }
 
     const removeItem = (id: number) => {
-        return
+        setItems(items.filter(x => x.id != id));
+    }
+
+    const changeAmount = (id: number, change: number) => {
+        const item = items.find(x => x.id === id);
+
+        if (item) {
+            item.amount = item.amount + change;
+            setTotalPrice (totalPrice + (item.price * change));
+            console.log("PRICE => ", totalPrice);
+            console.log("CART => ", items);
+        }
     }
 
     return (
-        <CartContext.Provider value={{items, totalPrice, addItem, removeItem}}>
+        <CartContext.Provider value={{items, totalPrice, addItem, removeItem, changeAmount}}>
             {children}
         </CartContext.Provider>
     );

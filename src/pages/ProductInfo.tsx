@@ -36,7 +36,7 @@ export default function ProductInfo () {
                 title: data.title,
                 price: data.price,
                 image: data.images[0],
-                ammount: 1
+                amount: 1
             };
             
             cartContextData.addItem(newItem);

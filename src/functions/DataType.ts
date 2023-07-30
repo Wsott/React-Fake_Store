@@ -84,12 +84,13 @@ export interface CartData {
   totalPrice: number;
   addItem: (item: CartItem) => void;
   removeItem: (id: number) => void;
+  changeAmount: (id: number, change: number) => void;
 }
 
 export interface CartItem {
     id: number;
     title: string;
     price: number;
-    ammount: number;
+    amount: number;
     image: string;
 }
