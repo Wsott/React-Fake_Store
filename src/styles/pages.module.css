@@ -180,3 +180,15 @@ th {
     padding: 0 1rem;
     align-self: flex-end;
 }
+
+/* Landing */
+.landingImageContainer {
+    width: 100%;
+    height: 91vh;
+    overflow: hidden;
+}
+
+.landingImage {
+    width: 100%;
+    height: 100%;
+}
