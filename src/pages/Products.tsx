@@ -52,7 +52,7 @@ export default function Products () {
     return (
         <>
             <div className={style.centeredTitle}>
-                <h1>Listado de productos</h1>
+                <h1>Our products</h1>
             </div>
             <div className={pageStyle.sectionedPage}>
                 <div className={pageStyle.sideBar}>

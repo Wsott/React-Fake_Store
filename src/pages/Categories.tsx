@@ -7,13 +7,12 @@ import Error from "../components/shared/Error";
 import { QUERY_KEY_CATEGORIES} from "../functions/GlobalConstants";
 import { FetchWrapper } from "../functions/Functions";
 
-
-
 export default function Categories () {
     const {data, status} = useQuery(QUERY_KEY_CATEGORIES, FetchWrapper);
     
     return (
         <>
+            <p className={style.pageTitle}>List of categories</p>
             <div className={style.mainContent}>
                 {status == "loading" && <Loading/>}
                 {status == "error" && <Error/>}

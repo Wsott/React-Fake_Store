@@ -153,6 +153,11 @@ a {
     align-self: center;
 }
 
+.forgotPass:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
 .create, .boldCreate {
     font-size: 14px;
     font-style: normal;
