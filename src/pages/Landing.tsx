@@ -5,6 +5,7 @@ import { LoginToken } from "../functions/DataType";
 import axios from "axios";
 import { URL_PROFILE_FETCH } from "../functions/GlobalConstants";
 import LandingMessage from "../components/unique/LandingMessage";
+import style from "../styles/pages.module.css";
 
 export default function Landing () {
     const { setUser, setRole } = useContext(UserContext);
@@ -33,7 +34,9 @@ export default function Landing () {
 
     return (
         <>
-        <h1>LANDING</h1>
+        <div className={style.landingImageContainer}>
+            <img className={style.landingImage} src="/landingImage.png" alt="Landing image" />
+        </div>
         <LandingMessage 
             image={"/ecommerce.jpg"} 
             title={"Welcome to our online store!"} 

@@ -13,6 +13,8 @@ import AdminProduct from './pages/AdminProduct'
 import AdminPanel from './pages/AdminPanel'
 import AdminCategoryForm from './components/unique/AdminCategoryForm'
 import AdminCategory from './pages/AdminCategory'
+import ProductInfo from './pages/ProductInfo'
+import Footer from './components/shared/Footer'
 
 const queryClient = new QueryClient();
 
@@ -29,12 +31,13 @@ function App() {
           <Route path="/categories/create" element={<AdminCategory/>}/>
           <Route path="/categories/edit/:id" element={<AdminCategoryForm/>}/>
           <Route path="/products" element={<Products/>}/>
-          <Route path="/products/:id" element={<Products/>}/>
+          <Route path="/products/:id" element={<ProductInfo/>}/>
           <Route path="/products/create" element={<AdminProduct/>}/>
           <Route path="/products/edit/:id" element={<AdminProductForm/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
           <Route path="/admin-panel" element={<AdminPanel/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </QueryClientProvider>
   )

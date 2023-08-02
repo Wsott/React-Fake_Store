@@ -78,3 +78,19 @@ export interface CategoryData {
     name: string;
     image: string;
 }
+
+export interface CartData {
+  items: Array<CartItem>;
+  totalPrice: number;
+  addItem: (item: CartItem) => void;
+  removeItem: (id: number) => void;
+  changeAmount: (id: number, change: number) => void;
+}
+
+export interface CartItem {
+    id: number;
+    title: string;
+    price: number;
+    amount: number;
+    image: string;
+}
