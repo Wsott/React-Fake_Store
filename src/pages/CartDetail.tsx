@@ -23,7 +23,9 @@ export default function CartDetail () {
                         <Separator/>
                         <div style={{display: "flex", flexDirection: "column"}}>
                             <p className={style.checkoutText}>Final price: ${totalPrice}</p>
-                            <button className={style.checkoutButton}>Checkout</button>
+                            <Link className={style.checkoutLink} to={"/checkout"}>
+                                <button className={style.checkoutButton}>Checkout</button>
+                            </Link>
                         </div>
                     </>
                 :
