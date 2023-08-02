@@ -37,7 +37,7 @@ function App() {
           <Route path="/products/edit/:id" element={<AdminProductForm/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
           <Route path="/admin-panel" element={<AdminPanel/>}/>
-          <Route path="*" element={<NotFound/>}/>
+          <Route path="*" element={<NotFound returnTo={'/'}/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

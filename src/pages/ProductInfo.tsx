@@ -8,12 +8,14 @@ import { CartItem, ProductData } from "../functions/DataType";
 import pageStyle from "../styles/pages.module.css";
 import { Separator } from "../components/shared/Separator";
 import CartContext from "../context/CartProvider";
+import NotFound from "./NotFound";
 
 export default function ProductInfo () {
     const cartContextData = useContext(CartContext);
 
     const {id}: any = useParams();
     const [data, setData] = useState<ProductData>();
+    const [error, setError] = useState<boolean>(false);
     const findProductMutation = useMutation(
         (id: string) => {
             return axios.get(URL_PRODUCTS + id);
@@ -21,6 +23,9 @@ export default function ProductInfo () {
         {
             onSuccess: (data) => {
                 setData(data.data);
+            },
+            onError: () => {
+                setError(true);
             }
         }
     );
@@ -60,7 +65,10 @@ export default function ProductInfo () {
                     </div>
                 </div>
             :
-                <Loading/>
+                (!error)?
+                    <Loading/>
+                :
+                    <NotFound returnTo={"/products"}/>
         }
         </>
     );

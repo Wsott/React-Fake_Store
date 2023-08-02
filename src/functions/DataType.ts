@@ -94,3 +94,7 @@ export interface CartItem {
     amount: number;
     image: string;
 }
+
+export interface NotFoundReturnPath {
+    returnTo: string;
+}
