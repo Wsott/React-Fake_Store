@@ -15,6 +15,7 @@ import AdminCategoryForm from './components/unique/AdminCategoryForm'
 import AdminCategory from './pages/AdminCategory'
 import ProductInfo from './pages/ProductInfo'
 import Footer from './components/shared/Footer'
+import NotFound from './pages/NotFound'
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/products/edit/:id" element={<AdminProductForm/>}/>
           <Route path="/cart-detail" element={<CartDetail/>}/>
           <Route path="/admin-panel" element={<AdminPanel/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

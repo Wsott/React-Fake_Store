@@ -27,7 +27,7 @@ export default function CartDetail () {
                         </div>
                     </>
                 :
-                    <p className={style.emptyCart}>Your order has no items! Go to our <Link style={{textDecoration: "underline"}} to={"/products"}>catalogue</Link> to add some item.</p>
+                    <p className={style.emptyCart}>Your order has no items! Go to our <Link style={{textDecoration: "underline"}} to={"/products"}>catalogue</Link> to add some items.</p>
             }
         </div>
     );

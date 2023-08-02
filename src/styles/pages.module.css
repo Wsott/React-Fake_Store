@@ -199,3 +199,22 @@ th {
     margin: 2rem 0 0 0;
     text-align: center;
 }
+
+/* 404 Page */
+.notFoundImage {
+    width: 50%;
+    margin-bottom: 3rem;
+}
+
+.notFoundContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
+.notFoundMessage{
+    font-size: xx-large;
+    margin: 0;
+}
