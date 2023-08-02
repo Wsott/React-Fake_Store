@@ -1,7 +1,7 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import CartContext from "../context/CartProvider";
 import style from "../styles/pages.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CheckoutFinished () {
     const { cleanTheCart } = useContext(CartContext);
