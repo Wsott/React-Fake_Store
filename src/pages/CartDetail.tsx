@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import CartContext from "../context/CartProvider";
 import CheckoutRow from "../components/unique/CheckoutRow";
 import style from "../styles/pages.module.css";
