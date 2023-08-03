@@ -6,6 +6,11 @@
   --color-primario: #F05454;
   --color-secundario: #30475E;
   --color-terciario: #121212; 
+
+  --color-navbar-footer: #2F3E46;
+  --color-back: #CAD2C5;
+  --color-card: #52796F;
+  --color-row: #354F52;
 }
 
 a {
@@ -13,7 +18,7 @@ a {
 }
 
 body {
-  background-color: var(--color-fondo);
+  background-color: var(--color-back);
   margin: 0px;
 }
 /* :root {

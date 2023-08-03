@@ -1,8 +1,9 @@
 .centeredContent {
     display: flex;
     margin: 2.5rem;
-    background-color: var(--color-primario);
+    background-color: var(--color-card);
     border-radius: 10px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
 .productImage {
@@ -160,10 +161,11 @@ th {
 }
 
 .checkOutContainer {
-    background-color: var(--color-primario);
+    background-color: var(--color-card);
     border-radius: 10px;
     padding: 1rem 3rem;
     margin: 2rem;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
 .checkoutText {
@@ -225,7 +227,7 @@ th {
 
 /* Checkout elements */
 .checkoutContainer {
-    background-color: goldenrod;
+    background-color: var(--color-back);
     height: 80vh;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -234,7 +236,7 @@ th {
 }
 
 .checkoutDetailsContainer {
-    background-color: aqua;
+    background-color: var(--color-card);
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
@@ -259,7 +261,7 @@ th {
 }
 
 .checkoutShippingContainer {
-    background-color: blueviolet;
+    background-color: var(--color-card);
     padding: 3rem;
     border-radius: 10px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
