@@ -86,6 +86,7 @@
     margin: 0 5rem 0 5rem;
     overflow-y: scroll;
     height: 65vh;
+    margin-bottom: 3rem;
 
     /* background-color: red; */
 }
@@ -131,12 +132,12 @@ th {
 }
 
 .commonRow:hover {
-    background-color: gainsboro;
+    background-color: var(--color-selected);
     font-weight: bolder;
 }
 
 .headerRow {
-    background-color: grey;
+    background-color: var(--color-card);
 }
 
 

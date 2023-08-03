@@ -6,7 +6,7 @@ export default function Card (inputData: Data) {
         <div className={style.cardContainer}>
             <img className={style.cardImage} src={inputData.image} alt={"Image of " + inputData.name} />
             <div className={style.cardDescription}>
-                <h3>{inputData.name}</h3>
+                <h4>{inputData.name}</h4>
             </div>
         </div>
     );

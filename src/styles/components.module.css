@@ -72,6 +72,7 @@ a {
 .cardContainer {
     width: 265px;
     height: 331px;
+    border-radius: 10px;
 
     background-color: var(--color-card);
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
@@ -87,6 +88,7 @@ a {
 
 .cardImage {
     width: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .cardDescription {
@@ -318,12 +320,13 @@ a {
 
 /* AdminProductForm */
 .adminProductContainer {
-    background-color: white;
+    background-color: var(--color-card);
     width: 500px;
     height: max-content;
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 .dualContainer {
@@ -363,7 +366,7 @@ a {
 
 .dialogContainer {
     padding: 5rem;
-    background-color: var(--color-secundario);
+    background-color: var(--color-card);
     border-radius: 10px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
