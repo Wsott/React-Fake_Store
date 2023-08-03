@@ -86,6 +86,7 @@ export interface CartData {
   removeItem: (id: number) => void;
   changeAmount: (id: number, change: number) => void;
   cleanTheCart: () => void;
+  restoreState: () => void;
 }
 
 export interface CartItem {

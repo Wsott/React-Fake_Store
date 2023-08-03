@@ -6,9 +6,11 @@ import axios from "axios";
 import { URL_PROFILE_FETCH } from "../functions/GlobalConstants";
 import LandingMessage from "../components/unique/LandingMessage";
 import style from "../styles/pages.module.css";
+import CartContext from "../context/CartProvider";
 
 export default function Landing () {
     const { setUser, setRole } = useContext(UserContext);
+    const { restoreState } = useContext(CartContext);
     
     const nameMutation = useMutation(
         (data: LoginToken) => {
@@ -30,6 +32,7 @@ export default function Landing () {
     useEffect (() => {
         const tokens = JSON.parse(localStorage.getItem("session") || "{}");
         nameMutation.mutate(tokens);
+        restoreState();
     }, []);
 
     return (
