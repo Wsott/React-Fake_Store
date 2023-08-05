@@ -8,6 +8,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import style from "../styles/components.module.css";
 import Loading from "../components/shared/Loading";
+import Error from "../components/shared/Error";
 
 
 interface ProductsSearchData {
@@ -26,6 +27,7 @@ interface ProductData {
 export default function Products () {
     const { state } = useLocation();
     const [ data, setData ] = useState<ProductData[]>();
+    const [ error, setError ] = useState<boolean> (false);
     const productsMutation = useMutation(
         (data: ProductsSearchData) => {
             return axios.get(URL_PRODUCTS + data.modifiers);
@@ -33,6 +35,9 @@ export default function Products () {
         {
             onSuccess: (data) => {
                 setData(data.data);
+            },
+            onError: () => {
+                setError(true);
             }
         }
     )
@@ -75,7 +80,10 @@ export default function Products () {
                                 )
                             })
                         :
-                            <Loading/>
+                            (!error)?
+                                <Loading/>
+                            :
+                                <Error/>
                     }
                 </div>
             </div>

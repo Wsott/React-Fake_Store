@@ -67,7 +67,7 @@ export default function CategoriesFilter ( {updateFilter, preSelected}: FilterCo
                 }
                 <label className={style.messageSubtitle} htmlFor="nameFilter">Filter by name</label>
                 <input onChange={handleTitleFilter} type="text" name="nameFilter" id="nameFilter" />
-                <label className={style.messageSubtitle} htmlFor="priceFilter">Filter by price</label>
+                <label className={style.messageSubtitle} htmlFor="priceFilter">Filter by price (max price)</label>
                 <input onChange={handlePriceFilter} type="number" name="priceFilter" id="priceFilter" min={1} defaultValue={1000} step={10}  />
             </div>
         </div>

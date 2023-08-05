@@ -1,8 +1,9 @@
 .centeredContent {
     display: flex;
     margin: 2.5rem;
-    background-color: var(--color-primario);
+    background-color: var(--color-card);
     border-radius: 10px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
 .productImage {
@@ -85,6 +86,7 @@
     margin: 0 5rem 0 5rem;
     overflow-y: scroll;
     height: 65vh;
+    margin-bottom: 3rem;
 
     /* background-color: red; */
 }
@@ -130,12 +132,12 @@ th {
 }
 
 .commonRow:hover {
-    background-color: gainsboro;
+    background-color: var(--color-selected);
     font-weight: bolder;
 }
 
 .headerRow {
-    background-color: grey;
+    background-color: var(--color-card);
 }
 
 
@@ -160,10 +162,11 @@ th {
 }
 
 .checkOutContainer {
-    background-color: var(--color-primario);
+    background-color: var(--color-card);
     border-radius: 10px;
     padding: 1rem 3rem;
     margin: 2rem;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
 .checkoutText {
@@ -174,11 +177,15 @@ th {
 
 .checkoutButton {
     font-size: xx-large;
-    margin: 0 1rem 1rem;
     width: max-content;
     border-radius: 10px;
     padding: 0 1rem;
+}
+
+.checkoutLink {
     align-self: flex-end;
+    width: min-content;
+    margin: 0 1rem 1rem;
 }
 
 /* Landing */
@@ -198,4 +205,136 @@ th {
     font-weight: bolder;
     margin: 2rem 0 0 0;
     text-align: center;
+}
+
+/* 404 Page */
+.notFoundImage {
+    width: 50%;
+    margin-bottom: 3rem;
+}
+
+.notFoundContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
+.notFoundMessage{
+    font-size: xx-large;
+    margin: 0;
+}
+
+/* Checkout elements */
+.checkoutContainer {
+    background-color: var(--color-back);
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 3rem;
+    column-gap: 5rem;
+}
+
+.checkoutDetailsContainer {
+    background-color: var(--color-card);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.checkoutDetailsTitle {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.checkoutDetailsSubtitle {
+    text-align: right;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.checkoutDetailsElements {
+    font-size: large;
+}
+
+.checkoutShippingContainer {
+    background-color: var(--color-card);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.checkoutShippingTitle {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.checkoutInputContainerTwo, .checkoutInputContainerThree, .checkoutInputContainerOne {
+    width: 100%;
+    display: grid;
+    column-gap: 0.5rem;
+    margin: 0.25rem 0;
+}
+
+.checkoutInputContainerOne {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.checkoutInputContainerTwo {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.checkoutInputContainerThree {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.checkoutInput {
+    height: 2rem;
+}
+
+.checkoutShippingInputs {
+    margin: 0.5rem 0;
+}
+
+.checkoutShippingButton {
+    font-size: xx-large;
+    margin: 1rem;
+    width: max-content;
+    border-radius: 10px;
+    padding: 0 1rem;
+    align-self: self-end;
+}
+
+.checkoutFinishedTitle, .checkoutFinishedTextReturn {
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.checkoutFinishedTitle {
+    font-size: 3rem;
+}
+
+.checkoutFinishedText {
+    font-size: x-large;
+}
+
+.checkoutFinishedTextReturn {
+    margin-top: 2rem;
+}
+
+.checkoutFinishedButton {
+    font-size: xx-large;
+    margin: 1rem;
+    width: max-content;
+    border-radius: 10px;
+    padding: 0 1rem;
+    align-self: center;
 }

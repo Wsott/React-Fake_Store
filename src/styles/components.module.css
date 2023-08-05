@@ -8,7 +8,7 @@ a {
 .navbar {
     height: 60px;
     max-width: 100%;
-    background-color: var(--color-terciario);
+    background-color: var(--color-navbar-footer);
     display: flex;
     align-items: center;
     padding: 0px 50px;
@@ -72,8 +72,9 @@ a {
 .cardContainer {
     width: 265px;
     height: 331px;
+    border-radius: 10px;
 
-    background-color: var(--color-primario);
+    background-color: var(--color-card);
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -87,6 +88,7 @@ a {
 
 .cardImage {
     width: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .cardDescription {
@@ -106,12 +108,14 @@ a {
 }
 
 .loginContainer {
-    background-color: white;
+    background-color: var(--color-card);
     width: 500px;
     height: max-content;
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
 .loginTitle, .loginSubtitle {
@@ -234,14 +238,13 @@ a {
 }
 
 .messageSubcontainer, .messageSubcontainerRight, .messageSubcontainerLeft {
-    background-color: red;
+    background-color: var(--color-card);
     margin: 2rem 10rem;
     padding: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-radius: 15px;
 
-    background-color: var(--color-primario);
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -317,12 +320,14 @@ a {
 
 /* AdminProductForm */
 .adminProductContainer {
-    background-color: white;
+    background-color: var(--color-card);
     width: 500px;
     height: max-content;
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dualContainer {
@@ -362,7 +367,7 @@ a {
 
 .dialogContainer {
     padding: 5rem;
-    background-color: var(--color-secundario);
+    background-color: var(--color-card);
     border-radius: 10px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
@@ -375,7 +380,7 @@ a {
 
 /* CheckoutRow */
 .containerCheckoutRow {
-    background-color: var(--color-secundario);
+    background-color: var(--color-row);
     margin: 1rem 2rem;
     display: flex;
     padding: 2rem;
@@ -444,7 +449,7 @@ a {
 
 /* Footer */
 .footerContainer {
-    background-color: var(--color-terciario);
+    background-color: var(--color-navbar-footer);
     margin: 0;
 }
 

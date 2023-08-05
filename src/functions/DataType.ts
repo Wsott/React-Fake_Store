@@ -85,6 +85,8 @@ export interface CartData {
   addItem: (item: CartItem) => void;
   removeItem: (id: number) => void;
   changeAmount: (id: number, change: number) => void;
+  cleanTheCart: () => void;
+  restoreState: () => void;
 }
 
 export interface CartItem {
@@ -93,4 +95,12 @@ export interface CartItem {
     price: number;
     amount: number;
     image: string;
+}
+
+export interface NotFoundReturnPath {
+    returnTo: string;
+}
+
+export interface CheckoutConfirmOperation {
+    nextPart: () => void;
 }
