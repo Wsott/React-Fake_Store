@@ -14,4 +14,4 @@ Start date: 2023/07/04 05:44
 
 4th Milestone: 2023/08/02 14:04
 
-Final Milestone: 2023/0X/XX XX:XX
+Final Milestone: 2023/08/05 10:04
